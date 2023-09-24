@@ -6,26 +6,38 @@ Docker biltegia erabiliko dugu gure lana garatzeko, autoen alokairua kudeatzeko 
 Web Sistema honetan sartzeko, erabiltzaile batekin saio hasiko dugu. Erabiltzaile horrek zenbait datu pertsonal bete beharko ditu, hala nola, izen osoa, NAN zenbakia, jaiotzea data edo telefono pertsonala.  
 Behin barruan, autoaen kudeaketa egiteko 5 atributu egongo dira, kotxearen matrikula, alokairuaren prezioa eguneko, kotxearen marka, kotxearen modeloa eta kotxeak erabiltzen duen karburante mota.  
 
-# Taldekideak
+## Taldekideak
 -  Urko Aranda
 -  Jon Izaguirre
 -  Maria Briones
 -  Ander de la Peña
--  Diego Corral.   
+-  Diego Corral.  
 
-# Instrukzioak
+## Instrukzioak
 Sortutako Web Sistema ikusi ahal izateko hurrengo komandoak jarraitu behar dituzu.
 
 Docker istalatzeko:
+```
 $ sudo apt install docker
+```
 
 Biltegiko irudia sortzeko:
+```
 $ docker buid -t="web" .
+```
 
 Zure biltegia hasteko:
+```
 $ docker-compose up -d
+```
 
 Aurreko pausuak jarraituta, web-ara sartzeko http://localhost:81 eta datu basearekin konektatzeko http://localhost:8890 bilatu beharko dituzu nabigatzailean
 
 Amaitzeko, biltegia gelditzeko:
+```
 $ docker-compose stop
+```
+
+## Datuen formatoa
+Web Sistemara sartzeko erabiltzaile bat erabili beharko da eta erabiltzaile horrek atributu batzuk dauzka, hurrengoak dira atributu horien formatoa:
+- 
