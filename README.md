@@ -19,6 +19,7 @@ Sortutako Web Sistema ikusi ahal izateko hurrengo komandoak jarraitu behar dituz
 Docker istalatzeko:
 ```
 $ sudo apt install docker
+$ sudo apt install docker-compose
 ```
 
 Biltegiko irudia sortzeko:
