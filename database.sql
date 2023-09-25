@@ -26,30 +26,25 @@ SET time_zone = "+00:00";
 --
 -- Estructura de tabla para la tabla `usuarios`
 --
+CREATE TABLE AUTOA
+ 	(Marka VARCHAR(30),
+ 	Prezioa INT,
+ 	Matrikula VARCHAR(30) NOT NULL,
+ 	KarburanteMota VARCHAR(30),
+ 	Modeloa VARCHAR(30),
+ 	PRIMARY KEY (Matrikula));
+ 
+ 
+CREATE TABLE ERABILTZAILEA
+ 	(IzenAbizenak VARCHAR(30),
+ 	NAN VARCHAR(30) NOT NULL,
+ 	Telefonoa INT,
+ 	JaiotzeData DATE,
+ 	Email VARCHAR(50),
+ 	PRIMARY KEY (NAN));
+ 
+INSERT INTO AUTOA VALUES(“Citroen”, 20, 1234 ABC, “Gasolina”, “C4 cactus”);
 
-CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `nombre` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `usuarios`
---
-
-INSERT INTO `usuarios` (`id`, `nombre`) VALUES
-(1, 'mikel'),
-(2, 'aitor');
-
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
