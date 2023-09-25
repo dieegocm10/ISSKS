@@ -39,5 +39,17 @@ $ docker-compose stop
 ```
 
 ## Datuen formatoa
+
 Web Sistemara sartzeko erabiltzaile bat erabili beharko da eta erabiltzaile horrek atributu batzuk dauzka, hurrengoak dira atributu horien formatoa:
-- 
+◦ Izen abizenak textua soilik.
+◦ NAN 11111111-Z formatua soilik onartuko du eta letra zenbakiei dagokiola ziurtatuko da (Algoritmo bat dago hori konprobatzeko).
+◦ Telefonoa 9 zenbaki soilik.
+◦ Jaiotze data datak uuuu-hh-ee formatuan soilik (Adib. 2021-08-26).
+◦ Email email egokiak soilik (adibidea@zerbitzaria.extentsioa).
+
+Autoen atributuen formatoa hurrengoa izango da:
+◦ Marka textua soilik.
+◦ Prezioa zenbaki osoak soilik.
+◦ Matrikula textua solik.
+◦ Karburante mota textua soilik.
+◦ Modeloa textua soilik.
