@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Estructura de tabla para la tabla `autoa`
 --
 CREATE TABLE AUTOA
  	(Marka VARCHAR(30),
@@ -33,8 +33,9 @@ CREATE TABLE AUTOA
  	KarburanteMota VARCHAR(30),
  	Modeloa VARCHAR(30),
  	PRIMARY KEY (Matrikula));
- 
- 
+--
+-- Estructura de tabla para la tabla `erabiltzailea`
+--
 CREATE TABLE ERABILTZAILEA
  	(IzenAbizenak VARCHAR(30),
  	NAN VARCHAR(30) NOT NULL,
@@ -43,8 +44,17 @@ CREATE TABLE ERABILTZAILEA
  	Email VARCHAR(50),
  	PRIMARY KEY (NAN));
  
-INSERT INTO AUTOA VALUES(“Citroen”, 20, 1234 ABC, “Gasolina”, “C4 cactus”);
-INSERT INTO AUTOA VALUES("AUDI", 10, 5678 DEF, "DIESEL", "Q5");
+ 
+ 
+INSERT INTO AUTOA VALUES ('Citroen', 20, '1234 ABC', 'Gasolina', 'C4 cactus');
+ 
+INSERT INTO AUTOA VALUES('Citroen', 25, '5678 DEF', 'Gasolina', 'Jumper furgon');
+ 
+INSERT INTO AUTOA VALUES('Cupra', 17, '9876 GHI', 'Diesel', 'Cupra Ateca');
+ 
+INSERT INTO AUTOA VALUES('Audi', 23, '5432 JKL', 'Diesel', 'Audi A4');
+
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
