@@ -18,10 +18,10 @@ INSTRUKZIOAK:
 Sortutako Web Sistema ikusi ahal izateko hurrengo komandoa jarraitu behar dituzu:
 
 1. Docker instalatzeko:
-...
+```
 	$ sudo apt install docker
 	$ sudo apt install docker-compose
-...
+```
 2. Biltegiko irudia sortzeko:
 
 	$ docker buid -t="web" .
