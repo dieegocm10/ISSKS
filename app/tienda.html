@@ -41,9 +41,21 @@
 				var gordeBtn = document.getElementById("gorde");
 				var garbiBtn = document.getElementById("garbitu");
 				//BOTOI GORDE
-				//gordeBtn.addEventListener("click", function() {
-				function validarFormulario(){
-					var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;
+				gordeBtn.addEventListener("click", function() {
+					validarFormulario()
+					
+				});//hasta aqui
+				//BOTOI GARBITU
+				garbiBtn.addEventListener("click", function() {
+					var elementua = document.querySelectorAll("input[type=text], input[type=number], input[type=date], input[type=email]");
+					elementua.forEach(function(campo) {
+					    campo.value = "";
+        });
+				});
+			});
+			
+			function validarFormulario(){
+				var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;
 					var nan = document.getElementsByName("nan")[0].value;
 					var telefonoa = document.getElementsByName("telefonoa")[0].value;
 					var jaiotzeData = document.getElementsByName("jaiotze data")[0].value;
@@ -51,6 +63,7 @@
 					var gakoa = document.getElementsByName("gakoa")[0].value;
 
 					if (izenAbizenak == "") {
+
 						alert("IZEN ABIZENAK ez dira jarri");
 				  		return false;
 					}
@@ -140,17 +153,7 @@
 					  	.catch(error => {
 					    		alert(error);
 					  	});
-				});//hasta aqui
-				//BOTOI GARBITU
-				garbiBtn.addEventListener("click", function() {
-					document.getElementsByName("izena")[0].value = "";
-					document.getElementsByName("abizena")[0].value = "";
-					document.getElementsByName("telefonoa")[0].value = "";
-					document.getElementsByName("jaiotze data")[0].value = "";
-					document.getElementsByName("email")[0].value = "";
-					document.getElementsByName("gakoa")[0].value = "";
-				});
-			});
+			}
 </script>
 
 	</body>
