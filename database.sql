@@ -41,7 +41,7 @@ CREATE TABLE ERABILTZAILEA
  	NAN VARCHAR(30) NOT NULL,
  	Gakoa VARCHAR(30),
  	Telefonoa INT,
- 	JaiotzeData DATE,
+ 	JaiotzeData VARCHAR(10),
  	Email VARCHAR(50),
  	PRIMARY KEY (NAN));
  
