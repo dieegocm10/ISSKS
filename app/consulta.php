@@ -18,12 +18,7 @@ $hostname = "db";
 
 
   if (mysqli_num_rows($query1) == 0) {
-    echo "La consulta no encontró ningún registro.";
-  } else {
-    // Procesar los resultados aquí
-    while ($row = mysqli_fetch_array($query1)) {
-        // Realizar acciones con los resultados
-    }
+    echo "erabiltzailea edo pasahitza txarto sartu dituzu";
   }
   mysqli_close($conn);
 ?>
