@@ -20,5 +20,9 @@ $hostname = "db";
   if (mysqli_num_rows($query1) == 0) {
     echo "erabiltzailea edo pasahitza txarto sartu dituzu";
   }
+  else{
+    header("Location: menu.html");
+  }
   mysqli_close($conn);
+  exit;
 ?>
