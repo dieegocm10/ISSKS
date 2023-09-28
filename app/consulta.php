@@ -1,43 +1,29 @@
 <?php
-
-  $hostname = "db";
+$hostname = "db";
   $username = "admin";
   $password = "test";
   $db = "database";
 
+
+  $izenAbizenak = $_POST['izenAbizenak'];
+  $gakoa = $_POST['gakoa'];
+  
+  
   $conn = mysqli_connect($hostname, $username, $password, $db);
   if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
   }
+  $query1 = mysqli_query($conn, "SELECT * FROM ERABILTZAILEA WHERE IzenAbizenak = '$izenAbizenak' AND Gakoa = '$gakoa'")
+  or die (mysqli_error($conn));
 
-  $query = mysqli_query($conn, "SELECT * FROM AUTOA")
-    or die (mysqli_error($conn));
 
-  echo '<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">';
-  
-  echo "<table border = '1'>
-          <thead>
-            <tr>
-              <th>Marka</th>
-              <th>Prezioa</th>
-              <th>Matrikula</th>
-              <th>KarburanteMota</th>
-              <th>Modeloa</th>
-            </tr>
-          </thead>
-          <tbody>";
-
-  while ($row = mysqli_fetch_array($query)) {
-    echo "<tr>
-            <td>{$row['Marka']}</td>
-            <td>{$row['Prezioa']}</td>
-            <td>{$row['Matrikula']}</td>
-            <td>{$row['KarburanteMota']}</td>
-            <td>{$row['Modeloa']}</td>
-          </tr>";
+  if (mysqli_num_rows($query1) == 0) {
+    echo "La consulta no encontró ningún registro.";
+  } else {
+    // Procesar los resultados aquí
+    while ($row = mysqli_fetch_array($query1)) {
+        // Realizar acciones con los resultados
+    }
   }
-
-  echo "</tbody></table></div>";
-
   mysqli_close($conn);
 ?>
