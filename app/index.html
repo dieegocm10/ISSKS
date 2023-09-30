@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title>Denda</title>
+		<title>Denda</title>	<!-Nabigatzaileko leihoan "Denda" ipintzeko->
 	</head>
 	
 	<body>
@@ -8,29 +8,31 @@
 		<form  method="post" action="consulta.php" onsubmit="return erabiltzaileaKonprbatu()"><table>
 			<tr>
 				<td>IZEN ABIZENAK:</td>
-				<td><input type="text" name="izenAbizenak"  id="izenAbizenak"></td>
+				<td><input type="text" name="izenAbizenak"  id="izenAbizenak"></td>	<!-Erabiltzailea hemen sartuko du haren izena-abizenak->
 			</tr>
 			<tr>
 				<td>GAKOA:</td>
-				<td><input type="text" name="gakoa" id="gakoa"></td>
+				<td><input type="password" name="gakoa" id="gakoa"></td>	<!-Erabiltzailea hemen sartuko du haren gakoa->
 			</tr>
 			<tr>
 				<td><input type="submit" name="sartu" value="Sartu" id="sartu"></td>
-				<td><a href="tienda.html"><input type="button" name="erregistratu" value="Erregistratu"></a></td>
+				<!-"Sartu" botoia sakatzerakoan, jasotako datuak beheko script-ra bidaltzen dira->
+				<td><a href="tienda.html"><input type="button" name="erregistratu" value="Erregistratu"></a></td>	
+				<!-"Erregistratu botoia sakatzerakoan, tienda.html martxan jarriko da->
 			</tr>
 		</table></form></div>
-		<script>
+		<script>	//Hemendik aurrera JavaScript bat hasten da
 			document.addEventListener("DOMContentLoaded", function() {
-				var sartuBtn = document.getElementById("sartu");
+				var sartuBtn = document.getElementById("sartu");	//"Sartu" botoia aldagai batean gorde
 				//BOTOI SARTU
-				sartuBtn.addEventListener("click", function() {
+				sartuBtn.addEventListener("click", function() {		//"Sartu" botoia klikatzerakoan erabiltzaileaKonprobatu() metodora deitu
 					erabiltzaileaKonprobatu()
 				});
 			});
 			
 			function erabiltzaileaKonprobatu(){
-				var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;
-				var gakoa = document.getElementsByName("gakoa")[0].value;
+				var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;	//Lehen sartutako izen-abizinenak aldagai batean gorde
+				var gakoa = document.getElementsByName("gakoa")[0].value;	//Lehen sartutako gakoa aldagai batean gorde
 				
 				//DATUAK BIDALI
 				var datuak = {
@@ -46,6 +48,6 @@
 				};
 				fetch('erabiltzaileBerriaGorde.php', conf)
 			}
-		</script>
+		</script>	<!JavaScript-a hemen amaitzen da->
 	</body>
 </html>
