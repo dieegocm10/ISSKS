@@ -36,6 +36,11 @@ Aurreko pausuak jarraituta, web-ara sartzeko http://localhost:81 eta datu basear
 
 Amaitzeko, biltegia gelditzeko:
 ```
+$ docker-compose down
+```
+
+Eta biltegia ezabatzeko:
+```
 $ docker-compose stop
 ```
 
