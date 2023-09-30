@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `autoa`
+-- `autoa` tabla sortzeko komandoak
 --
 CREATE TABLE AUTOA
  	(Marka VARCHAR(30),
@@ -34,7 +34,7 @@ CREATE TABLE AUTOA
  	Modeloa VARCHAR(30),
  	PRIMARY KEY (Matrikula));
 --
--- Estructura de tabla para la tabla `erabiltzailea`
+-- `erabiltzailea` tabla sortzeko komandoak
 --
 CREATE TABLE ERABILTZAILEA
  	(IzenAbizenak VARCHAR(30),
@@ -46,7 +46,9 @@ CREATE TABLE ERABILTZAILEA
  	PRIMARY KEY (NAN));
  
  
- 
+--
+-- auto batzuk sarzeko datu basean
+--
 INSERT INTO AUTOA VALUES ('Citroen', 20, '1234 ABC', 'Gasolina', 'C4 cactus');
  
 INSERT INTO AUTOA VALUES('Citroen', 25, '5678 DEF', 'Gasolina', 'Jumper furgon');
