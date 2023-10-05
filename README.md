@@ -19,20 +19,20 @@ Sortutako Web Sistema ikusi ahal izateko hurrengo komandoa jarraitu behar dituzu
 
 1. Docker instalatzeko:
 ```
-	$ sudo apt install docker
-	$ sudo apt install docker-compose
+	sudo apt install docker
+	sudo apt install docker-compose
 ```
 2. Biltegiko irudia sortzeko:
 ```
-	$ docker buid -t="web" .
+	docker build -t="web" .
 ```	
 3. Zure biltegia hasteko:
 ```
-	$ docker-compose up -d
+	docker-compose up
 ```	
 Aurreko pausuak jarraituta, web-ara sartzeko http://localhost:81 eta datu basearekin konektatzeko http://localhost:8890 bilatu beharko dituzu nabigatzailean
 
 4. Amaitzeko, biltegia gelditzeko:
 ```
-	$ docker-compose stop
+	docker-compose down
 ```
