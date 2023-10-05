@@ -48,7 +48,7 @@ $ docker-compose stop
 
 Web Sistemara sartzeko erabiltzaile bat erabili beharko da eta erabiltzaile horrek atributu batzuk dauzka, hurrengoak dira atributu horien formatoa:
 -  Izen abizenak textua soilik.
--  NAN 11111111-Z formatua soilik onartuko du eta letra zenbakiei dagokiola ziurtatuko da (Algoritmo bat dago hori konprobatzeko).
+-  NAN 11111111Z formatua soilik onartuko du eta letra zenbakiei dagokiola ziurtatuko da (Algoritmo bat dago hori konprobatzeko).
 -  Telefonoa 9 zenbaki soilik.
 -  Jaiotze data datak uuuu-hh-ee formatuan soilik (Adib. 26/08/2021).
 -  Email email egokiak soilik (adibidea@zerbitzaria.extentsioa).
