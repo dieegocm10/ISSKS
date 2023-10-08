@@ -7,41 +7,41 @@
 		<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 		<form  method="post" onsubmit="return erabiltzaileaAldatu()"><table>
 			<tr>
-				<td>IZEN ABIZENAK:</td>
+				<td>IZEN ABIZENAK:</td>	<!-Zure izen-abizen sartzeko tokia!>
 				<td><input type="text" name="izenAbizenak" id="izenAbizenak"></td>
 			</tr>
 			<tr>
-				<td>NAN:</td>
-				<td><input type="text" name="nan"></td>
+				<td>NAN:</td>	<!-Zure NAN sartzeko tokia!>
+				<td><input type="text" name="nan" placeholder="11111111Z" ></td>
 			</tr>
 			<tr>
-				<td>TELEFONOA:</td>
-				<td><input type="number" name="telefonoa"></td>
+				<td>TELEFONOA:</td>	<!-Zure telefonoa sartzeko tokia!>
+				<td><input type="number" name="telefonoa" placeholder="666666666" ></td>
 			</tr>
 			<tr>
-				<td>JAIOTZE DATA:</td>
-				<td><input type="date" name="jaiotze data"></td>
+				<td>JAIOTZE DATA:</td>	<!-Zure jaiotze data sartzeko tokia!>
+				<td><input type="date" name="jaiotze data" placeholder="ee/hh/uuuu" ></td>
 			</tr>
 			<tr>
-				<td>EMAIL:</td>
-				<td><input type="text" name="email"></td>
+				<td>EMAIL:</td>	<!-Zure email sartzeko tokia!>
+				<td><input type="text" name="email" placeholder="adibidea@zerbitzaria.extentsioa" ></td>
 			</tr>
 			<tr>
-				<td>GAKOA:</td>
+				<td>GAKOA:</td>	<!-Zure gako sartzeko tokia!>
 				<td><input type="text" name="gakoa"></td>
 			</tr>
 			<tr>
-				<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php" id="gorde"name="gorde" value="Gorde"></p></td>
-				<td><p align="left"><input type="submit" formaction="erabiltzaileaEzabatu.php" id="garbitu"name="ezabatu" value="Erabiltzailea ezabatu"></p></td>
+				<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php" id="gorde"name="gorde" value="Gorde"></p></td>	<!-Gorde botoai programatu!>
+				<td><p align="left"><input type="submit" formaction="erabiltzaileaEzabatu.php" id="garbitu"name="ezabatu" value="Erabiltzailea ezabatu"></p></td>	<!-Ezabatu botoia programatu>
 			</tr>
 		</table></div>
 		
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
-				var gordeBtn = document.getElementById("gorde");
-				var ezabatuBtn = document.getElementById("ezabatu");
+				var gordeBtn = document.getElementById("gorde");	//Gorde botoia aldagai batean gorde
+				var ezabatuBtn = document.getElementById("ezabatu");	//Ezabatu botoia aldagai batean gorde
 				
-				var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;
+				var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;	//Erabiltzailearen atributuak aldagaietan gorde
 				var nan = document.getElementsByName("nan")[0].value;
 				var telefonoa = document.getElementsByName("telefonoa")[0].value;
 				var jaiotzeData = document.getElementsByName("jaiotze data")[0].value;
