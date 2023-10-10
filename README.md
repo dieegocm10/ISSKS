@@ -28,7 +28,7 @@ Sortutako Web Sistema ikusi ahal izateko hurrengo komandoa jarraitu behar dituzu
 ```	
 3. Zure biltegia hasteko:
 ```
-	docker-compose up
+	docker-compose up 
 ```	
 Aurreko pausuak jarraituta, web-ara sartzeko http://localhost:81 eta datu basearekin konektatzeko http://localhost:8890 bilatu beharko dituzu nabigatzailean
 
