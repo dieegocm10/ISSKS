@@ -20,20 +20,18 @@
             <tr>
               <th>Marka</th>
               <th>Prezioa</th>
-              <th>Matrikula</th>
-              <th>KarburanteMota</th>
-              <th>Modeloa</th>
+              <th>Editatu</th>
             </tr>
           </thead>
           <tbody>";
 
   while ($row = mysqli_fetch_array($query)) {
+  	$a=$row['Marka'];
+  	$b=$row['Prezioa'];
     echo "<tr>
-            <td>{$row['Marka']}</td>
-            <td>{$row['Prezioa']}</td>
-            <td>{$row['Matrikula']}</td>
-            <td>{$row['KarburanteMota']}</td>
-            <td>{$row['Modeloa']}</td>
+            <td>{$a}</td>
+            <td>{$b}</td>
+          <td><a href='autoarenDatuakEditatu.php'><input type='button' name='sartu' value='Editatu'></a></td>
           </tr>";
   }
 
