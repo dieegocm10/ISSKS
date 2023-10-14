@@ -17,12 +17,12 @@ $hostname = "db";
   if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
   }
-  $query1 = mysqli_query($conn, "UPDATE ERABILTZAILEA 
+  $query1 = mysqli_query($conn, "UPDATE AUTOA 
                               SET Marka = '$marka',
                                   Prezioa = '$prezioa',
                                   Matrikula = '$matrikula',
                                   KarburanteMota = '$karburanteMota',
-                                  Modeloa = '$modeloa',
+                                  Modeloa = '$modeloa'
                               WHERE Marka = '$lehenMarka' AND Prezioa = '$lehenPrezioa'")
   	or die (mysqli_error($conn));
 

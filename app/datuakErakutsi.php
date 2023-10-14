@@ -30,9 +30,9 @@
   	$b=$row['Prezioa'];
     echo "<tr>
             <td>{$a}</td>
-            <td>{$b}</td>
-          <td><a href='autoarenDatuakEditatu.php'><input type='button' name='sartu' value='Editatu'></a></td>
-          </tr>";
+            <td>{$b}</td>"; echo'
+          <td><a href="autoarenDatuakEditatu.php?parametro1=';?><?php echo $a; ?><?php echo'&parametro2=';?><?php echo $b; ?><?php echo'"><input type="button" name="sartu" value="Editatu"></a></td>
+          </tr>';
   }
 
   echo "</tbody></table></div>";

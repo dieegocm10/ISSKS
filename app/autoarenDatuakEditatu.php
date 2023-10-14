@@ -38,7 +38,7 @@
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			
 
-			<form  method="post" onsubmit="return erabiltzaileaAldatu()"><table>
+			<form  method="post" onsubmit="return autoaAldatu()"><table>
 				<tr>
 					<td>MARKA:</td>
 					<td><input type="text" name="marka" value="';?><?php echo $Marka; ?><?php echo'"></td>
@@ -63,7 +63,7 @@
 				</tr>
 				<tr>
 					<td><p align="right"><input type="submit" formaction="autoaAldatu.php" id="gorde"name="gorde" value="Gorde"></p></td>
-					<td><p align="left"><input type="submit" formaction="autoaEzabatu.php" id="garbitu"name="ezabatu" value="Erabiltzailea ezabatu"></p></td>
+					<td><p align="left"><input type="submit" formaction="autoaEzabatu.php" id="garbitu"name="ezabatu" value="Autoa ezabatu"></p></td>
 				</tr>
 			</table></div>
 			
@@ -157,11 +157,8 @@
 				function autoaEzabatu(){
 					//DATUAK BIDALI
 					var datuak = {
-						  marka: marka,
-						  prezioa: prezioa,
-						  matrikula: matrikula,
-						  karburanteMota: karburanteMota,
-						  modeloa: modeloa
+						  lehenMarka:$LehenMarka,
+						  lehenPrezioa:$LehenPrezioa
 					};
 					var conf = {
 						  method: "POST",
