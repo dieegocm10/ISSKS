@@ -25,8 +25,8 @@
 	$Matrikula = $row["Matrikula"];
 	$KarburanteMota = $row["KarburanteMota"];
 	$Modeloa = $row["Modeloa"];
-	$LehenMarka = $row["Marka"];
-	$LehenPrezioa = $row["Prezioa"];
+	$LehenMarka = $Marka;
+	$LehenPrezioa = $Prezioa;
   
 	echo '<html>
 		<head>
@@ -41,29 +41,29 @@
 			<form  method="post" onsubmit="return autoaAldatu()"><table>
 				<tr>
 					<td>MARKA:</td>
-					<td><input type="text" name="marka" value="';?><?php echo $Marka; ?><?php echo'"></td>
+					<td><input type="text" name="marka" value="';echo $Marka;echo'"></td>
 
 
 				</tr>
 				<tr>
 					<td>PREZIOA:</td>
-					<td><input type="number" name="prezioa" value="';?><?php echo $Prezioa; ?><?php echo'"></td>
+					<td><input type="number" name="prezioa" value="';echo $Prezioa;  echo'"></td>
 				</tr>
 				<tr>
 					<td>MATRIKULA:</td>
-					<td><input type="text" name="matrikula" value="';?><?php echo $Matrikula; ?><?php echo'"></td>
+					<td><input type="text" name="matrikula" value="'; echo $Matrikula; echo'"></td>
 				</tr>
 				<tr>
 					<td>KARBURANTE MOTA:</td>
-					<td><input type="text" name="karburanteMota" value="';?><?php echo $KarburanteMota; ?><?php echo'"></td>
+					<td><input type="text" name="karburanteMota" value="';echo $KarburanteMota;  echo'"></td>
 				</tr>
 				<tr>
 					<td>Modeloa:</td>
-					<td><input type="text" name="modeloa" value="';?><?php echo $Modeloa; ?><?php echo'"></td>
+					<td><input type="text" name="modeloa" value="'; echo $Modeloa;  echo'"></td>
 				</tr>
 				<tr>
-					<td><p align="right"><input type="submit" formaction="autoaAldatu.php" id="gorde"name="gorde" value="Gorde"></p></td>
-					<td><p align="left"><input type="submit" formaction="autoaEzabatu.php" id="garbitu"name="ezabatu" value="Autoa ezabatu"></p></td>
+					<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde"></p></td>
+					<td><p align="left"><input type="submit" formaction="autoaEzabatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="garbitu"name="ezabatu" value="Autoa ezabatu"></p></td>
 				</tr>
 			</table></div>
 			
@@ -139,9 +139,7 @@
 						  prezioa: prezioa,
 						  matrikula: matrikula,
 						  karburanteMota: karburanteMota,
-						  modeloa: modeloa,
-						  lehenMarka:$LehenMarka,
-						  lehenPrezioa:$LehenPrezioa
+						  modeloa: modeloa
 					};
 					var conf = {
 						  method: "POST",

@@ -11,6 +11,7 @@ $hostname = "db";
   $email = $_POST['email'];
   $jaiotzeData = $_POST['jaiotzeData'];
   $gakoa = $_POST['gakoa'];
+  $lehenNan = $_GET['lehenNan'];
   
   
   $conn = mysqli_connect($hostname, $username, $password, $db);
@@ -24,16 +25,13 @@ $hostname = "db";
                                   Telefonoa = '$telefonoa',
                                   JaiotzeData = '$jaiotzeData',
                                   Email = '$email'
-                              WHERE IzenAbizenak = '$izenAbizenak' AND Gakoa = '$gakoa'")
+                              WHERE NAN = '$lehenNan'")
   	or die (mysqli_error($conn));
 
 
-  if (mysqli_num_rows($query1) == 0) {
-    echo "erabiltzailea edo pasahitza txarto sartu dituzu";
-  }
-  else{
-    header("Location: menu.html");
-  }
+
+    header("Location: index.html");
+  
   mysqli_close($conn);
   exit;
 ?>

@@ -26,6 +26,7 @@
 	$jaiotzeData = $row["JaiotzeData"];
 	$email = $row["Email"];
 	$gakoa = $row["Gakoa"];
+	$lehenNan = $nan;
   
 	echo '<html>
 		<head>
@@ -40,39 +41,36 @@
 			<form  method="post" onsubmit="return erabiltzaileaAldatu()"><table>
 				<tr>
 					<td>IZEN ABIZENAK:</td>
-					<td><input type="text" name="izenAbizenak" id="izenAbizenak" value="';?><?php echo $izenAbizenak; ?><?php echo'"></td>
-
-
+					<td><input type="text" name="izenAbizenak" id="izenAbizenak" value="';echo $izenAbizenak;echo'"></td>
 				</tr>
 				<tr>
 					<td>NAN:</td>
-					<td><input type="text" name="nan" value="';?><?php echo $nan; ?><?php echo'"></td>
+					<td><input type="text" name="nan" value="'; echo $nan;echo'"></td>
 				</tr>
 				<tr>
 					<td>TELEFONOA:</td>
-					<td><input type="number" name="telefonoa" value="';?><?php echo $tlf; ?><?php echo'"></td>
+					<td><input type="number" name="telefonoa" value="'; echo $tlf;echo'"></td>
 				</tr>
 				<tr>
 					<td>JAIOTZE DATA:</td>
-					<td><input type="date" name="jaiotze data" value="';?><?php echo $jaiotzeData; ?><?php echo'"></td>
+					<td><input type="date" name="jaiotze data" value="'; echo $jaiotzeData;echo'"></td>
 				</tr>
 				<tr>
 					<td>EMAIL:</td>
-					<td><input type="text" name="email" value="';?><?php echo $email; ?><?php echo'"></td>
+					<td><input type="text" name="email" value="'; echo $email;echo'"></td>
 				</tr>
 				<tr>
 					<td>GAKOA:</td>
-					<td><input type="text" name="gakoa" value="';?><?php echo $gakoa; ?><?php echo'"></td>
+					<td><input type="text" name="gakoa" value="';echo $gakoa; echo'"></td>
 				</tr>
 				<tr>
-					<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php" id="gorde"name="gorde" value="Gorde"></p></td>
-					<td><p align="left"><input type="submit" formaction="erabiltzaileaEzabatu.php" id="garbitu"name="ezabatu" value="Erabiltzailea ezabatu"></p></td>
+					<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=';echo $lehenNan; echo '" id="gorde"name="gorde" value="Gorde"></p></td>
+					<td><p align="left"><input type="submit" formaction="erabiltzaileaEzabatu.php?lehenNan=';echo $lehenNan; echo '" id="garbitu"name="ezabatu" value="Erabiltzailea ezabatu"></p></td>
 				</tr>
 			</table></div>
 			<script>
 				document.addEventListener("DOMContentLoaded", function() {
 					var gordeBtn = document.getElementById("gorde");
-					var ezabatuBtn = document.getElementById("ezabatu");
 					
 					var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;
 					var nan = document.getElementsByName("nan")[0].value;
@@ -90,15 +88,6 @@
 						    return false;
 						}
 					});
-					//BOTOI EZABATU
-					garbiBtn.addEventListener("click", function() {
-						if(datuakKonprobatu()){
-						    erabiltzaileaEzabatu()
-						}
-						else{
-						    return false;
-						}
-					});
 				});
 				
 				function datuakKonprobatu(){
@@ -106,13 +95,7 @@
 						alert("IZEN ABIZENAK ez dira jarri");
 					  	return false;
 					}
-					else{
-						var regex = /^[a-zA-Z\s]*$/;
-						if(!regex.test(izenAbizenak)){
-							 alert("Izen Abizenetan bakarrik letrak jarri ahal dira");
-							 return false;
-						}
-					}
+					
 					if (nan == "") {
 						alert("NAN ez da jarri");
 					  	return false;
@@ -185,26 +168,7 @@
 					fetch("erabiltzaileaAldatu.php", conf)
 				}
 				
-				function erabiltzaileaEzabatu(){
-					//DATUAK BIDALI
-					var datuak = {
-						  izenAbizenak: izenAbizenak,
-						  nan: nan,
-						  telefonoa: telefonoa,
-						  email: email,
-						  jaiotzeData: jaiotzeData,
-						  gakoa: gakoa
-					};
-					var conf = {
-						  method: "POST",
-						  body: JSON.stringify(datuak), 
-						  headers: {
-						    	"Content-Type": "application/json"
-						  }
-					};
-
-					fetch("erabiltzaileaEzabatu.php", conf)
-				}
+				
 			</script>
 		</body>
 	</html>';

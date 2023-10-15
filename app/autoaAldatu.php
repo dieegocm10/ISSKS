@@ -1,5 +1,5 @@
 <?php
-$hostname = "db";
+  $hostname = "db";
   $username = "admin";
   $password = "test";
   $db = "database";
@@ -10,8 +10,7 @@ $hostname = "db";
   $matrikula = $_POST['matrikula'];
   $karburanteMota = $_POST['karburanteMota'];
   $modeloa = $_POST['modeloa'];
-  $lehenMarka = $_POST['lehenMarka'];
-  $lehenPrezioa = $_POST['lehenPrezioa'];
+  $lehenMatrikula = $_GET['lehenMatrikula'];
   
   $conn = mysqli_connect($hostname, $username, $password, $db);
   if ($conn->connect_error) {
@@ -23,16 +22,12 @@ $hostname = "db";
                                   Matrikula = '$matrikula',
                                   KarburanteMota = '$karburanteMota',
                                   Modeloa = '$modeloa'
-                              WHERE Marka = '$lehenMarka' AND Prezioa = '$lehenPrezioa'")
+                              WHERE Matrikula = '$lehenMatrikula'")
   	or die (mysqli_error($conn));
 
+   header("Location: datuakErakutsi.php");
 
-  if (mysqli_num_rows($query1) == 0) {
-    echo "Zerbait txarto egin da";
-  }
-  else{
-    header("Location: menu.html");
-  }
+
   mysqli_close($conn);
   exit;
 ?>
