@@ -5,23 +5,29 @@
 	
 	<body>
 		<div align="center"style="position: absolute; top: 49%; left: 39%; transform: translate(-50%, -50%);">
-		<img src="irudiak/images.png" width="200" height="150"></div>
+
 		<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 		<form  method="post" action="pasahitzaKonprobatu.php" onsubmit="return erabiltzaileaKonprbatu()"><table>
+		 <tr>
+		    <td><img src="irudiak/images.png" width="200" height="150"></td>
+		    <td>
+		      <table>
 			<tr>
-				<td>IZEN ABIZENAK:</td>
-				<td><input type="text" name="izenAbizenak"  id="izenAbizenak"></td>	<!-Erabiltzailea hemen sartuko du haren izena-abizenak->
+			  <td>IZEN ABIZENAK:</td>
+			  <td><input type="text" name="izenAbizenak" id="izenAbizenak"></td>
 			</tr>
 			<tr>
-				<td>GAKOA:</td>
-				<td><input type="text" name="gakoa" id="gakoa"></td>	<!-Erabiltzailea hemen sartuko du haren gakoa->
+			  <td>GAKOA:</td>
+			  <td><input type="text" name "gakoa" id="gakoa"></td>
 			</tr>
 			<tr>
-				<td><input type="submit" name="sartu" value="Sartu" id="sartu"></td>
-				<!-"Sartu" botoia sakatzerakoan, jasotako datuak beheko script-ra bidaltzen dira->
-				<td><a href="erabiltzaileBerriaGorde.html"><input type="button" name="erregistratu" value="Erregistratu"></a></td>	
-				<!-"Erregistratu botoia sakatzerakoan, tienda.html martxan jarriko da->
+			  <td><input type="submit" name="sartu" value="Sartu" id="sartu"></td>
+			  <td><a href="erabiltzaileBerriaGorde.html"><input type="button" name="erregistratu" value="Erregistratu"></a></td>
 			</tr>
-		</table></form></div>
+		      </table>
+		    </td>
+		  </tr>
+		</table>
+		</form></div>
 	</body>
 </html>
