@@ -73,7 +73,7 @@
 				</tr>
 				<tr>
 					<td>GAKOA:</td>
-					<td><input type="text" name="gakoa" value="';echo $gakoa; echo'"></td>
+					<td><input type="password" name="gakoa" value="';echo $gakoa; echo'"></td>
 				</tr>
 				<tr>
 					<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=';echo $lehenNan; echo '" id="gorde"name="gorde" value="Gorde"></p></td>
