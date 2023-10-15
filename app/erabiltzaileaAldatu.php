@@ -1,5 +1,5 @@
 <?php
-$hostname = "db";
+  $hostname = "db";
   $username = "admin";
   $password = "test";
   $db = "database";
@@ -12,7 +12,6 @@ $hostname = "db";
   $jaiotzeData = $_POST['jaiotzeData'];
   $gakoa = $_POST['gakoa'];
   $lehenNan = $_GET['lehenNan'];
-  
   
   $conn = mysqli_connect($hostname, $username, $password, $db);
   if ($conn->connect_error) {

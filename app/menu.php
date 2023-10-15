@@ -15,7 +15,7 @@
 				<table>
 					<tr>
 						<td><a href="autoaSartu.html"><input type="button" name="sartu" value="AUTOA SARTU"></a></td>
-						<td><a href="datuakEditatu.php?parametro1=';?><?php echo $izenAbizenak; ?><?php echo'&parametro2=';?><?php echo $gakoa; ?><?php echo'"><input type="button" name="sartuu" value="DATUAK EDITATU"></a></td>
+						<td><a href="datuakEditatu.php?parametro1=';echo $izenAbizenak;echo'&parametro2=';echo $gakoa;echo'"><input type="button" name="sartuu" value="DATUAK EDITATU"></a></td>
 						<td><a href="datuakErakutsi.php"><input type="button" name="erregistratu" value="AUTOAK"></a></td>
 					</tr>
 				</table></div>

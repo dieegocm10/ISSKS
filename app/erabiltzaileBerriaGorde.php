@@ -5,7 +5,7 @@
   	$email = $_POST['email'];
   	$jaiotzeData = $_POST['jaiotzeData'];
   	$gakoa = $_POST['gakoa'];
-  
+
   	$hostname = "db";
   	$username = "admin";
   	$password = "test";
@@ -16,25 +16,12 @@
     		die("Database connection failed: " . $conn->connect_error);
   	}
 
-  	$query = mysqli_query($conn, "INSERT INTO ERABILTZAILEA VALUES ('$izenAbizenak', '$nan', '$gakoa', '$telefonoa', '$jaiotzeData', '$email')")//no coge la jaotze data
+  	$query = mysqli_query($conn, "INSERT INTO ERABILTZAILEA VALUES ('$izenAbizenak', '$nan', '$gakoa', '$telefonoa', '$jaiotzeData', '$email')")
     	or die (mysqli_error($conn));
     	
     	mysqli_close($conn);
 
-	// Redirige antes de enviar la alerta
-	header("Location: erabiltzaileBerriaGorde.html");
+	header("Location: index.html");
 	
-
-// Esta alerta se mostrará después de la redirección
-	echo "<html>
-<head>
-    <title>Mi Página</title>
-</head>
-<body>
-    <script>
-        alert('kdwf');
-    </script>
-</body>
-</html>";
-exit;
+	exit;
 ?>

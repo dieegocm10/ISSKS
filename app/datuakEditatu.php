@@ -53,7 +53,7 @@
 				</tr>
 				<tr>
 					<td>JAIOTZE DATA:</td>
-					<td><input type="date" name="jaiotze data" value="'; echo $jaiotzeData;echo'"></td>
+					<td><input type="date" name="jaiotzeData" value="'; echo $jaiotzeData;echo'"></td>
 				</tr>
 				<tr>
 					<td>EMAIL:</td>
@@ -75,7 +75,7 @@
 					var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;
 					var nan = document.getElementsByName("nan")[0].value;
 					var telefonoa = document.getElementsByName("telefonoa")[0].value;
-					var jaiotzeData = document.getElementsByName("jaiotze data")[0].value;
+					var jaiotzeData = document.getElementsByName("jaiotzeData")[0].value;
 					var email = document.getElementsByName("email")[0].value;
 					var gakoa = document.getElementsByName("gakoa")[0].value;
 					
