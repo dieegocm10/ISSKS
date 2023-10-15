@@ -11,6 +11,8 @@
 			</head>
 			
 			<body>
+				<div align="center"style="position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);">
+				<img src="irudiak/4.jpg" width="200" height="150"></div>
 				<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 				<table>
 					<tr>
