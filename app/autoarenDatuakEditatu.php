@@ -44,10 +44,8 @@
 		</head>
 		
 		<body>
-			<div align="center"style="position: absolute; top: 49%; left: 35%; transform: translate(-50%, -50%);">
-			<img src="irudiak/5.jpeg" width="300" height="250"></div>
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-			
+			<img src="irudiak/5.jpeg" width="300" height="250">
 
 			<form  method="post" onsubmit="return autoaAldatu()"><table>
 				<tr>
