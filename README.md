@@ -24,7 +24,7 @@ $ sudo apt install docker-compose
 
 Biltegiko irudia sortzeko:
 ```
-$ docker buid -t="web" .
+$ docker build -t="web" .
 ```
 
 Zure biltegia hasteko:
@@ -56,6 +56,6 @@ Web Sistemara sartzeko erabiltzaile bat erabili beharko da eta erabiltzaile horr
 Autoen atributuen formatoa hurrengoa izango da:
 -  Marka testua soilik.
 -  Prezioa zenbaki osoak soilik.
--  Matrikula testua solik.
+-  Matrikula testua solik zzzz LLL formatuan. (Adib. 1111 AAA)
 -  Karburante mota testua soilik.
 -  Modeloa testua soilik.
