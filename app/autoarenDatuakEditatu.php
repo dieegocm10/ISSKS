@@ -25,11 +25,21 @@
 	$Matrikula = $row["Matrikula"];
 	$KarburanteMota = $row["KarburanteMota"];
 	$Modeloa = $row["Modeloa"];
-	$LehenMarka = $Marka;
-	$LehenPrezioa = $Prezioa;
   
 	echo '<html>
 		<head>
+			<script>
+				var lehenMatrikula = "';echo $Matrikula; echo '";
+
+				function confirmEzabatu() {
+				    var confirmacion = confirm("Autoa ezabatu nahi duzu?");
+
+				    if (confirmacion) {
+					window.location.href = "autoaEzabatu.php?lehenMatrikula=" + lehenMatrikula;
+				    }
+				}
+
+			</script>
 			<title>Denda</title>
 		</head>
 		
@@ -63,7 +73,7 @@
 				</tr>
 				<tr>
 					<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde"></p></td>
-					<td><p align="left"><input type="submit" formaction="autoaEzabatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="garbitu"name="ezabatu" value="Autoa ezabatu"></p></td>
+					<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" onclick="confirmEzabatu()" /></p></td>
 				</tr>
 			</table></div>
 			

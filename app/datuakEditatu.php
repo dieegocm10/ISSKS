@@ -30,6 +30,18 @@
   
 	echo '<html>
 		<head>
+			<script>
+				var lehenNan = "';echo $lehenNan; echo '";
+
+				function confirmEzabatu() {
+				    var confirmacion = confirm("Erabiltzailea ezabatu nahi duzu?");
+
+				    if (confirmacion) {
+					window.location.href = "erabiltzaileaEzabatu.php?lehenNan=" + lehenNan;
+				    }
+				}
+
+			</script>
 			<title>Denda</title>
 		</head>
 		
@@ -65,7 +77,7 @@
 				</tr>
 				<tr>
 					<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=';echo $lehenNan; echo '" id="gorde"name="gorde" value="Gorde"></p></td>
-					<td><p align="left"><input type="submit" formaction="erabiltzaileaEzabatu.php?lehenNan=';echo $lehenNan; echo '" id="garbitu"name="ezabatu" value="Erabiltzailea ezabatu"></p></td>
+					<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Erabiltzailea ezabatu" onclick="confirmEzabatu()" /></p></td>
 				</tr>
 			</table></div>
 			<script>
@@ -90,6 +102,7 @@
 					});
 				});
 				
+
 				function datuakKonprobatu(){
 					if (izenAbizenak == "") {
 						alert("IZEN ABIZENAK ez dira jarri");
