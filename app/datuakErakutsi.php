@@ -14,9 +14,9 @@
     or die (mysqli_error($conn));
     
     
-  echo '<div align="center" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%);">';
-  echo '<img src="irudiak/2.jpg" width="950" height="250"></div>';
+
   echo '<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">';
+  echo '<img src="irudiak/2.jpg" width="950" height="250">';
   echo "<table border = '1'>
           <thead>
             <tr>
@@ -37,9 +37,7 @@
           </tr>';
   }
 
-  echo "</tbody></table></div>";
-  
-  echo '<div align="center" style="position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%);">';
+  echo "</tbody></table>";
   echo '<img src="irudiak/3.jfif" width="950" height="250"></div>';
 
   mysqli_close($conn);
