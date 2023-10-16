@@ -12,7 +12,7 @@ Behin barruan, autoaren kudeaketa egiteko 5 atributu egongo dira, kotxearen matr
 -  Maria Briones
 -  Ander de la Peña 
 -  Diego Corral
- 
+
 ## Instrukzioak
 Sortutako Web Sistema ikusi ahal izateko hurrengo komandoak jarraitu behar dituzu.
 
@@ -59,3 +59,4 @@ Autoen atributuen formatoa hurrengoa izango da:
 -  Matrikula testua solik zzzz LLL formatuan. (Adib. 1111 AAA)
 -  Karburante mota testua soilik.
 -  Modeloa testua soilik.
+
