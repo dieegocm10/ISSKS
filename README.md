@@ -6,7 +6,7 @@ Docker biltegia erabiliko dugu gure lana garatzeko, autoen alokairua kudeatzeko 
 Web Sistema honetan sartzeko, erabiltzaile batekin saio hasiko dugu. Erabiltzaile horrek zenbait datu pertsonal bete beharko ditu, hala nola, izen osoa, NAN zenbakia, jaiotze data edo telefono pertsonala.  
 Behin barruan, autoaren kudeaketa egiteko 5 atributu egongo dira, kotxearen matrikula, alokairuaren prezioa eguneko, kotxearen marka, kotxearen modeloa eta kotxeak erabiltzen duen karburante mota.  
 
-## Taldekideak
+## Taldekideak 
 -  Urko Aranda
 -  Jon Izaguirre
 -  Maria Briones
