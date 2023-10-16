@@ -59,4 +59,3 @@ Autoen atributuen formatoa hurrengoa izango da:
 -  Matrikula testua solik zzzz LLL formatuan. (Adib. 1111 AAA)
 -  Karburante mota testua soilik.
 -  Modeloa testua soilik.
-
