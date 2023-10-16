@@ -10,7 +10,7 @@ Behin barruan, autoaren kudeaketa egiteko 5 atributu egongo dira, kotxearen matr
 -  Urko Aranda
 -  Jon Izaguirre
 -  Maria Briones
--  Ander de la Peña
+-  Ander de la Peña 
 -  Diego Corral.  
 
 ## Instrukzioak
