@@ -8,7 +8,7 @@ PARTAIDEAK:
 Lan honetan 5 partaide izango gara: Urko Aranda, Jon Izaguirre, Maria Briones, Ander de la Peña eta Diego Corral.     
 
 TALDEKIDEAK:
-* Urko Aranda
+* Urko Aranda 
 * Jon Izaguirre
 * Maria Briones
 * Ander de la Peña
