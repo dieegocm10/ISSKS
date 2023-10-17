@@ -15,7 +15,7 @@ Behin barruan, autoaren kudeaketa egiteko 5 atributu egongo dira, kotxearen matr
 
 ## Instrukzioak
 Sortutako Web Sistema ikusi ahal izateko hurrengo komandoak jarraitu behar dituzu.
-
+ 
 Docker istalatzeko:
 ```
 $ sudo apt install docker
