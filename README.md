@@ -1,5 +1,5 @@
 # Alokairu Docker
-Lan hau web sistema bat sortzean datza, horretarako Ubuntu sistema eragilea erabiliz, hainbat baliabide erabiliko ditugu, hala nola, JavaScript, HTML, CSS eta PHP 7.2 Docker Compose-an. Gainera, datu base bat sortuko dugu MariaDB(MySQL) erabiliz. 
+Lan hau web sistema bat sortzean datza, horretarako Ubuntu sistema eragilea erabiliz, hainbat baliabide erabiliko ditugu, hala nola, JavaScript, HTML, CSS eta PHP 7.2 Docker Compose-an. Gainera, datu base bat sortuko dugu MariaDB(MySQL) erabiliz.  
 
 Docker biltegia erabiliko dugu gure lana garatzeko, autoen alokairua kudeatzeko web-sistema bat izango da. 
 
