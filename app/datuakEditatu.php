@@ -57,8 +57,9 @@
 				</tr>
 				<tr>
 					<td>NAN:</td>
-					<td><input type="text" name="nan" value="<?php echo $nan; ?>" readonly></td>
+    					<td><input type="text" name="nan" id="nan" value="<?php echo $lehenNan; ?>" readonly></td>
 				</tr>
+				<tr>
 				<tr>
 					<td>TELEFONOA:</td>
 					<td><input type="number" name="telefonoa" value="'; echo $tlf;echo'"></td>
@@ -183,6 +184,7 @@
 				
 				
 			</script>
+		
 		</body>
 	</html>';
 ?>

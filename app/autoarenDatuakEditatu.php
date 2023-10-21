@@ -67,7 +67,7 @@
 					<td><input type="text" name="karburanteMota" value="';echo $KarburanteMota;  echo'"></td>
 				</tr>
 				<tr>
-					<td>Modeloa:</td>
+					<td>MODELOA:</td>
 					<td><input type="text" name="modeloa" value="'; echo $Modeloa;  echo'"></td>
 				</tr>
 				<tr>
@@ -181,3 +181,4 @@
 		</body>
 	</html>';
 ?>
+

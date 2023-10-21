@@ -1,26 +1,75 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Denda</title>	<!-Nabigatzaileko leihoan "Denda" ipintzeko->
-	</head>
-	
-	<body>
-		<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-		<img src="irudiak/images.png" width="200" height="150">
-		<form  method="post" action="pasahitzaKonprobatu.php" onsubmit="return erabiltzaileaKonprbatu()"><table>
-			<tr>
-				<td>IZEN ABIZENAK:</td>
-				<td><input type="text" name="izenAbizenak"  id="izenAbizenak"></td>	<!-Erabiltzailea hemen sartuko du haren izena-abizenak->
-			</tr>
-			<tr>
-				<td>GAKOA:</td>
-				<td><input type="password" name="gakoa" id="gakoa"></td>	<!-Erabiltzailea hemen sartuko du haren gakoa->
-			</tr>
-			<tr>
-				<td><input type="submit" name="sartu" value="Sartu" id="sartu"></td>
-				<!-"Sartu" botoia sakatzerakoan, jasotako datuak beheko script-ra bidaltzen dira->
-				<td><a href="erabiltzaileBerriaGorde.html"><input type="button" name="erregistratu" value="Erregistratu"></a></td>	
-				<!-"Erregistratu botoia sakatzerakoan, tienda.html martxan jarriko da->
-			</tr>
-		</table></form></div>
-	</body>
+<head>
+    <title>Denda</title>
+    <style>
+        body {
+            background-color: #BAE1E0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .comment {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px;
+            font-size: 48px;
+            margin-bottom: 120px;
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        table {
+            margin: 20px auto; /* Esto centra la tabla horizontalmente */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="comment">ONGI ETORRI DENDARA!!!!</div>
+        <img class="image" src="irudiak/login.png" width="200" height="150">
+        <form method="post" action="pasahitzaKonprobatu.php" onsubmit="return erabiltzaileaKonprbatu()">
+            <table>
+                <tr>
+                    <td>IZEN ABIZENAK:</td>
+                    <td><input type="text" name="izenAbizenak" id="izenAbizenak"></td>
+                </tr>
+                <tr>
+                    <td>GAKOA:</td>
+                    <td><input type="password" name="gakoa" id="gakoa"></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" name="sartu" value="Sartu" class="button"></td>
+                    <td><a href="erabiltzaileBerriaGorde.html"><input type="button" name="erregistratu" value="Erregistratu" class="button"></a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
 </html>
+
+
+
+
+
