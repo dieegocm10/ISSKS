@@ -1,38 +1,102 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Denda</title>
-	</head>
-	
-	<body>
-		<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-		<img src="irudiak/1.jpeg" width="450" height="250">
-		<form  method="post" action="autoaGorde.php" onsubmit="return autoaGoorde()"><table>
-			<tr>
-				<td>MARKA:</td> <!-Sartu nahi duzun autoaren marka ipintzeko tokia!>
-				<td><input type="text" name="marka"  placeholder="Adb: Citroen, Cupra, Audi..."></td>
-			</tr>
-			<tr>
-				<td>PREZIOA:</td>   <!-Sartu nahi duzun autoaren prezioa ipintzeko tokia!>
-				<td><input type="number" name="prezioa"  placeholder="Eguneko prezioa eurotan"></td>
-			</tr>
-			<tr>
-				<td>MATRIKULA:</td> <!-Sartu nahi duzun autoaren matrikula ipintzeko tokia!>
-				<td><input type="text" name="matrikula"  placeholder="Adb: 1234 ABC"></td>
-			</tr>
-			<tr>
-				<td>KARBURANTE MOTA:</td>   <!-Sartu nahi duzun autoaren mota ipintzeko tokia!>
-				<td><input type="text" name="karburanteMota"  placeholder="Adb: Gasolina, Diesel..."></td>
-			</tr>
-			<tr>
-				<td>MODELOA:</td>   <!-Sartu nahi duzun autoaren modeloa ipintzeko tokia!>
-				<td><input type="text" name="modeloa"  placeholder="Adb: C4 cactus, Audi A4..."></td>
-			</tr>
-			<tr>
-				<td><p align="right"><input type="submit" id="gorde"name="gorde" value="Gorde"></p></td>
-				<td><p align="left"><input type="button" id="garbitu"name="garbitu" value="Garbitu"></p></td>
-			</tr>
-		</table></div>
+<head>
+    <title>Denda</title>
+    <style>
+        body {
+            background-color: #BAE1E0; 
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            padding: 20px;
+        }
+        .comment {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .data-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .button {
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="comment">Autoaren ezaugarri guztiak zure gustura bete:</div>
+        <img class="image" src="irudiak/1.jpeg" alt="Autoaren irudia">
+        <div class="data-container">
+            <form method="post" action="autoaGorde.php" onsubmit="return autoaGorde()">
+                <table>
+                    <tr>
+                        <td>MARKA:</td>
+                        <td><input type="text" name="marka" placeholder="Adb: Citroen, Cupra, Audi..."></td>
+                    </tr>
+                    <tr>
+                        <td>PREZIOA:</td>
+                        <td><input type="number" name="prezioa" placeholder="Eguneko prezioa eurotan"></td>
+                    </tr>
+                    <tr>
+                        <td>MATRIKULA:</td>
+                        <td><input type="text" name="matrikula" placeholder="Adb: 1234 ABC"></td>
+                    </tr>
+                    <tr>
+                        <td>KARBURANTE MOTA:</td>
+                        <td><input type="text" name="karburanteMota" placeholder="Adb: Gasolina, Diesel..."></td>
+                    </tr>
+                    <tr>
+                        <td>MODELOA:</td>
+                        <td><input type="text" name="modeloa" placeholder="Adb: C4 cactus, Audi A4..."></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="button-container">
+                            <input type="submit" id="gorde" name="gorde" class="button" value="Gorde">
+                            <input type="button" id="garbitu" name="garbitu" class="button" value="Garbitu">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
 		
+		
+		
+
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
 				var gordeBtn = document.getElementById("gorde");
