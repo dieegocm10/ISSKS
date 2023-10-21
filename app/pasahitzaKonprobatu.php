@@ -1,27 +1,46 @@
 <?php
-	$hostname = "db";
-  	$username = "admin";
-  	$password = "test";
-  	$db = "database";
+$hostname = "db";
+$username = "admin";
+$password = "test";
+$db = "database";
 
-  	$izenAbizenak = $_POST['izenAbizenak'];
-  	$gakoa = $_POST['gakoa'];
-  
-  	$conn = mysqli_connect($hostname, $username, $password, $db);
-  	if ($conn->connect_error) {
-    		die("Database connection failed: " . $conn->connect_error);
-  	}
-  	$query1 = mysqli_query($conn, "SELECT * FROM ERABILTZAILEA WHERE IzenAbizenak = '$izenAbizenak' AND Gakoa = '$gakoa'")
-  	or die (mysqli_error($conn));
+$izenAbizenak = $_POST['izenAbizenak'];
+$gakoa = $_POST['gakoa'];
 
+$conn = mysqli_connect($hostname, $username, $password, $db);
+if ($conn->connect_error) {
+    die("Database connection failed: " . $conn->connect_error);
+}
+$query1 = mysqli_query($conn, "SELECT * FROM ERABILTZAILEA WHERE IzenAbizenak = '$izenAbizenak' AND Gakoa = '$gakoa'")
+    or die (mysqli_error($conn));
 
-  	if (mysqli_num_rows($query1) == 0) {
-    		echo "erabiltzailea edo pasahitza txarto sartu dituzu";
-  	}
-  	else{
-    		header("Location: menu.php?parametro1=$izenAbizenak&parametro2=$gakoa");
-  	}
-  	
-  	mysqli_close($conn);
-  	exit;
+if (mysqli_num_rows($query1) == 0) {
+    echo '<html>
+            <head>
+                <title>Mezua</title>
+                <style>
+                    body {
+                        background-color: #F17865;
+                    }
+                    .message {
+                        font-size: 40px;
+                    }
+                </style>
+            </head>
+            <body>
+                <div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                    <p>ERROR</p>
+                    <img src="error.jpg" width="200" height="150">
+                    <p>Erabiltzailea edo pasahitza txarto sartu dituzu!!</p>
+                    <p>Saiatu berriro</p>
+                </div>
+            </body>
+        </html>';
+} else {
+    header("Location: menu.php?parametro1=$izenAbizenak&parametro2=$gakoa");
+}
+
+mysqli_close($conn);
+exit;
 ?>
+
