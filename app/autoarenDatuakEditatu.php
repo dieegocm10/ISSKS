@@ -41,41 +41,98 @@
 
 			</script>
 			<title>Denda</title>
+			<style>
+				 body {
+				    background-color: #BAE1E0; 
+				    font-family: Arial, sans-serif;
+				    text-align: center;
+				    margin: 0;
+				    padding: 0;
+				}
+				.container {
+				    display: flex;
+				    flex-direction: column;
+				    align-items: center;
+				    max-width: 100%;
+				    padding: 20px;
+				}
+				.comment {
+				    background-color: #4285f4;
+				    color: #fff;
+				    padding: 10px;
+				    font-size: 24px;
+				    margin-bottom: 20px;
+				}
+				.image {
+				    max-width: 100%;
+				    height: auto;
+				    margin-bottom: 20px;
+				}
+				.data-container {
+				    background-color: #fff;
+				    padding: 20px;
+				    border-radius: 5px;
+				    box-shadow: 0 0 10px;
+				}
+				.button-container {
+				    display: flex;
+				    justify-content: space-between;
+				    margin-top: 20px; 
+				}
+				.button {
+				    background-color: #4285f4;
+				    color: #fff;
+				    padding: 10px 20px;
+				    border: none;
+				    border-radius: 5px;
+				    margin-top: 20px;
+				    text-decoration: none;
+				}
+			</style>
 		</head>
 		
 		<body>
+			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
+			<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>
+			<td><a href="datuakErakutsi.php"><input type="button" name="FLOTA" value="FLOTA" class="button"></a></td>
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-			<img src="irudiak/5.jpeg" width="300" height="250">
+			<div class="container">
+				<div class="comment">Autoaren datuak aldatu edo ezabatu ahal dituzu:</div>
+      				<img src="irudiak/5.jpeg" width="300" height="250">
+				<div class="data-container">
 
-			<form  method="post" onsubmit="return autoaAldatu()"><table>
-				<tr>
-					<td>MARKA:</td>
-					<td><input type="text" name="marka" value="';echo $Marka;echo'"></td>
+					<form  method="post" onsubmit="return autoaAldatu()">
+						<table>
+							<tr>
+								<td>MARKA:</td>
+								<td><input type="text" name="marka" value="';echo $Marka;echo'"></td>
 
 
-				</tr>
-				<tr>
-					<td>PREZIOA:</td>
-					<td><input type="number" name="prezioa" value="';echo $Prezioa;  echo'"></td>
-				</tr>
-				<tr>
-					<td>MATRIKULA:</td>
-					<td><input type="text" name="matrikula" value="'; echo $Matrikula; echo'"></td>
-				</tr>
-				<tr>
-					<td>KARBURANTE MOTA:</td>
-					<td><input type="text" name="karburanteMota" value="';echo $KarburanteMota;  echo'"></td>
-				</tr>
-				<tr>
-					<td>MODELOA:</td>
-					<td><input type="text" name="modeloa" value="'; echo $Modeloa;  echo'"></td>
-				</tr>
-				<tr>
-					<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde"></p></td>
-					<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" onclick="confirmEzabatu()" /></p></td>
-				</tr>
-			</table></div>
-			
+							</tr>
+							<tr>
+								<td>PREZIOA:</td>
+								<td><input type="number" name="prezioa" value="';echo $Prezioa;  echo'"></td>
+							</tr>
+							<tr>
+								<td>MATRIKULA:</td>
+								<td><input type="text" name="matrikula" value="'; echo $Matrikula; echo'"></td>
+							</tr>
+							<tr>
+								<td>KARBURANTE MOTA:</td>
+								<td><input type="text" name="karburanteMota" value="';echo $KarburanteMota;  echo'"></td>
+							</tr>
+							<tr>
+								<td>MODELOA:</td>
+								<td><input type="text" name="modeloa" value="'; echo $Modeloa;  echo'"></td>
+							</tr>
+							<tr>
+								<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde"></p></td>
+								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" onclick="confirmEzabatu()" /></p></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div></div>
 			<script>
 				document.addEventListener("DOMContentLoaded", function() {
 					var gordeBtn = document.getElementById("gorde");

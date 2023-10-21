@@ -30,9 +30,9 @@ if (mysqli_num_rows($query1) == 0) {
             <body>
                 <div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
                     <p>ERROR</p>
-                    <img src="error.jpg" width="200" height="150">
+                    <img class="image" src="irudiak/error.png" width="200" height="150">
                     <p>Erabiltzailea edo pasahitza txarto sartu dituzu!!</p>
-                    <p>Saiatu berriro</p>
+                    <td><a href="index.html"><input type="button" name="Saiatu Berriro" value="Saiatu Berriro" class="button"></a></td>
                 </div>
             </body>
         </html>';

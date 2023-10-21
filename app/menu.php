@@ -48,6 +48,7 @@ $gakoa = $_GET['parametro2'];
     </style>
 </head>
 <body>
+	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
     <div class="container">
         <div class="comment">Hauetako bat hautatu:</div>
         <img class="image" src="irudiak/4.jpg" width="400" height="350" alt="Imagen de muestra">

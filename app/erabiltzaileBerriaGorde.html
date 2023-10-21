@@ -1,9 +1,53 @@
 <html>
 	<head>
 		<title>Denda</title>
+		<style>
+			body {
+			    background-color: #BAE1E0;
+			    font-family: Arial, sans-serif;
+			    text-align: center;
+			    margin: 0;
+			    padding: 0;
+			}
+
+			.comment {
+			    background-color: #4285f4;
+			    color: #fff;
+			    padding: 10px;
+			    font-size: 48px;
+			    margin-bottom: 120px;
+			}
+
+			.container {
+			    position: absolute;
+			    top: 50%;
+			    left: 50%;
+			    transform: translate(-50%, -50%);
+			}
+
+			.button {
+			    background-color: #4285f4;
+			    color: #fff;
+			    padding: 10px 20px;
+			    border: none;
+			    border-radius: 5px;
+			    text-decoration: none;
+			}
+
+			.image {
+			    max-width: 100%;
+			    height: auto;
+			}
+
+			table {
+			    margin: 20px auto; /* Esto centra la tabla horizontalmente */
+			}
+	    	</style>
 	</head>
 	
 	<body>
+		
+		<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
 		<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 		<img src="irudiak/ESTE.gif" width="450" height="250">
 		<form  method="post" action="erabiltzaileBerriaGorde.php" onsubmit="return erabiltzaileaGorde()"><table>
@@ -29,7 +73,7 @@
 			</tr>
 			<tr>
 				<td>GAKOA:</td>	<!-Zure gako sartzeko tokia!>
-				<td><input type="password" name="gakoa" ></td>
+				<td><input type="text" name="gakoa" ></td>
 			</tr>
 			<tr>
 				<td><p align="right"><input type="submit" id="gorde"name="gorde" value="Gorde"></p></td>

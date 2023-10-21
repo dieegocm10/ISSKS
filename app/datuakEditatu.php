@@ -43,44 +43,99 @@
 
 			</script>
 			<title>Denda</title>
+			<style>
+				 body {
+				    background-color: #BAE1E0; 
+				    font-family: Arial, sans-serif;
+				    text-align: center;
+				    margin: 0;
+				    padding: 0;
+				}
+				.container {
+				    display: flex;
+				    flex-direction: column;
+				    align-items: center;
+				    max-width: 100%;
+				    padding: 20px;
+				}
+				.comment {
+				    background-color: #4285f4;
+				    color: #fff;
+				    padding: 10px;
+				    font-size: 24px;
+				    margin-bottom: 20px;
+				}
+				.image {
+				    max-width: 100%;
+				    height: auto;
+				    margin-bottom: 20px;
+				}
+				.data-container {
+				    background-color: #fff;
+				    padding: 20px;
+				    border-radius: 5px;
+				    box-shadow: 0 0 10px;
+				}
+				.button-container {
+				    display: flex;
+				    justify-content: space-between;
+				    margin-top: 20px; 
+				}
+				.button {
+				    background-color: #4285f4;
+				    color: #fff;
+				    padding: 10px 20px;
+				    border: none;
+				    border-radius: 5px;
+				    margin-top: 20px;
+				    text-decoration: none;
+				}
+			</style>
 		</head>
 		
 		<body>
-			
+			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
+			<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-			
-
-			<form  method="post" onsubmit="return erabiltzaileaAldatu()"><table>
-				<tr>
-					<td>IZEN ABIZENAK:</td>
-					<td><input type="text" name="izenAbizenak" id="izenAbizenak" value="';echo $izenAbizenak;echo'"></td>
-				</tr>
-				<tr>
-					<td>NAN:</td>
-    					<td><input type="text" name="nan" id="nan" value="<?php echo $lehenNan; ?>" readonly></td>
-				</tr>
-				<tr>
-				<tr>
-					<td>TELEFONOA:</td>
-					<td><input type="number" name="telefonoa" value="'; echo $tlf;echo'"></td>
-				</tr>
-				<tr>
-					<td>JAIOTZE DATA:</td>
-					<td><input type="date" name="jaiotzeData" value="'; echo $jaiotzeData;echo'"></td>
-				</tr>
-				<tr>
-					<td>EMAIL:</td>
-					<td><input type="text" name="email" value="'; echo $email;echo'"></td>
-				</tr>
-				<tr>
-					<td>GAKOA:</td>
-					<td><input type="password" name="gakoa" value="';echo $gakoa; echo'"></td>
-				</tr>
-				<tr>
-					<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=';echo $lehenNan; echo '" id="gorde"name="gorde" value="Gorde"></p></td>
-					<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Erabiltzailea ezabatu" onclick="confirmEzabatu()" /></p></td>
-				</tr>
-			</table></div>
+			<div class="container">
+				<div class="comment">Zure erabiltzailearen datuak aldatu ahal dituzu, NAN izan ezik:</div>
+        			<img class="image" src="irudiak/editar.png" width"600" height"400">
+				<div class="data-container">
+					<form  method="post" onsubmit="return erabiltzaileaAldatu()">
+						<table>
+							<tr>
+								<td>IZEN ABIZENAK:</td>
+								<td><input type="text" name="izenAbizenak" id="izenAbizenak" value="';echo $izenAbizenak;echo'"></td>
+							</tr>
+							<tr>
+								<td>NAN:</td>
+			    					<td><input type="text" name="nan" id="nan" value="';echo $nan;echo'" readonly></td>
+							</tr>
+							<tr>
+							<tr>
+								<td>TELEFONOA:</td>
+								<td><input type="number" name="telefonoa" value="'; echo $tlf;echo'"></td>
+							</tr>
+							<tr>
+								<td>JAIOTZE DATA:</td>
+								<td><input type="date" name="jaiotzeData" value="'; echo $jaiotzeData;echo'"></td>
+							</tr>
+							<tr>
+								<td>EMAIL:</td>
+								<td><input type="text" name="email" value="'; echo $email;echo'"></td>
+							</tr>
+							<tr>
+								<td>GAKOA:</td>
+								<td><input type="text" name="gakoa" value="';echo $gakoa; echo'"></td>
+							</tr>
+							<tr>
+								<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=';echo $lehenNan; echo '" id="gorde"name="gorde" value="Gorde"></p></td>
+								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Erabiltzailea ezabatu" onclick="confirmEzabatu()" /></p></td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div></div>
 			<script>
 				document.addEventListener("DOMContentLoaded", function() {
 					var gordeBtn = document.getElementById("gorde");
