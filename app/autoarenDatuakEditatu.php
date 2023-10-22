@@ -79,7 +79,7 @@
 								<td><input type="text" name="modeloa" value="'; echo $Modeloa;  echo'"></td>
 							</tr>
 							<tr>
-								<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde" class="button"></p></td>	<!- GORDE botoia ipintzea !>
+								<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde" class="button"></p></td>	<!- GORDE botoia ipintzea, klikatzerakoan autoaAldatu.php-ra joan !>
 								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" class="button" onclick="confirmEzabatu()" /></p></td>	<!- EZABATU botoia ipintzea !>
 							</tr>
 						</table>
