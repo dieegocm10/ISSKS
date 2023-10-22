@@ -20,7 +20,7 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 <html>
 
 <head>
-    <title>Zure Flota</title> 	<!- Izenburuam Flota ipini !>
+    <title>Zure Flota</title> 
     <link rel="stylesheet" href="css/datuakErakutsi.css">	
 </head>
 
