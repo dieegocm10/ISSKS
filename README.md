@@ -44,16 +44,16 @@ Eta biltegia ezabatzeko:
 $ docker-compose stop
 ```
 
-## Datuen formatoa
+## Datuen formatua
 
-Web Sistemara sartzeko erabiltzaile bat erabili beharko da eta erabiltzaile horrek atributu batzuk dauzka, hurrengoak dira atributu horien formatoa:
+Web Sistemara sartzeko erabiltzaile bat erabili beharko da eta erabiltzaile horrek atributu batzuk dauzka, hurrengoak dira atributu horien formatua:
 -  Izen abizenak textua soilik.
 -  NAN 11111111Z formatua soilik onartuko du eta letra zenbakiei dagokiola ziurtatuko da.
 -  Telefonoa 9 zenbaki soilik.
 -  Jaiotze data datak ee-hh-uuuu formatuan soilik (Adib. 26/08/2021).
--  Email email egokiak soilik (adibidea@zerbitzaria.extentsioa).
+-  Emaila, formatua egokia dutenek soilik (adibidea@zerbitzaria.extentsioa).
 
-Autoen atributuen formatoa hurrengoa izango da:
+Autoen atributuen formatua hurrengoa izango da:
 -  Marka testua soilik.
 -  Prezioa zenbaki osoak soilik.
 -  Matrikula testua solik zzzz LLL formatuan (Adib. 1111 AAA).
