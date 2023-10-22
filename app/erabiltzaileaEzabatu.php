@@ -1,10 +1,11 @@
 <?php
+	session_start();
   $hostname = "db";
   $username = "admin";
   $password = "test";
   $db = "database";
 
-  $lehenNan = $_GET['lehenNan'];
+  $lehenNan = $_SESSION['NAN'];
   
   
   $conn = mysqli_connect($hostname, $username, $password, $db);

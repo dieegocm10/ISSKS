@@ -1,6 +1,6 @@
 <?php
-$NAN = $_GET['parametro1'];
-$gakoa = $_GET['parametro2'];
+session_start();
+$NAN = $_SESSION['NAN'];
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +15,9 @@ $gakoa = $_GET['parametro2'];
         <div class="comment">Hauetako bat hautatu:</div>
         <img class="image" src="irudiak/4.jpg" width="400" height="350" alt="Imagen de muestra">
         <div class="button-container">
-            <a class="button" href="autoaSartu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>">AUTOA SARTU</a>
-            <a class="button" href="datuakEditatu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>">DATUAK EDITATU</a>
-            <a class="button" href="datuakErakutsi.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>">AUTOAK</a>
+            <a class="button" href="autoaSartu.php">AUTOA SARTU</a>
+            <a class="button" href="datuakEditatu.php">DATUAK EDITATU</a>
+            <a class="button" href="datuakErakutsi.php">AUTOAK</a>
         </div>
     </div>
 </body>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $hostname = "db";
 $username = "admin";
 $password = "test";
@@ -37,7 +38,8 @@ if (mysqli_num_rows($query1) == 0) {
             </body>
         </html>';
 } else {
-    header("Location: menu.php?parametro1=$NAN&parametro2=$gakoa");
+	$_SESSION['NAN'] = $NAN;
+    	header("Location: menu.php");
 }
 
 mysqli_close($conn);

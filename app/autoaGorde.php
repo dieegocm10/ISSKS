@@ -18,5 +18,5 @@
   	$query = mysqli_query($conn, "INSERT INTO AUTOA VALUES ('$marka', '$prezioa', '$matrikula', '$karburanteMota', '$modeloa')")
     	or die (mysqli_error($conn));
     	
-    	header("Location: menu.php");
+    	header("Location: datuakErakutsi.php");
 ?>

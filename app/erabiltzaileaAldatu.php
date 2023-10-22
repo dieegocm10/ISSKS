@@ -1,4 +1,5 @@
 <?php
+	session_start();
   $hostname = "db";
   $username = "admin";
   $password = "test";
@@ -11,7 +12,7 @@
   $email = $_POST['email'];
   $jaiotzeData = $_POST['jaiotzeData'];
   $gakoa = $_POST['gakoa'];
-  $lehenNan = $_GET['lehenNan'];
+  $lehenNan = $_SESSION['NAN'];
   
   $conn = mysqli_connect($hostname, $username, $password, $db);
   if ($conn->connect_error) {
