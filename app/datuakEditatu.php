@@ -42,13 +42,13 @@
 				}
 
 			</script>
-			<title>Denda</title>	<!- Izenburuan "Denda" ipini !>
-			<link rel="stylesheet" href="css/datuakEditatu.css">	<!- datuakEditatu.css erabiltzea diseinua egiteko !>
+			<title>Denda</title>	
+			<link rel="stylesheet" href="css/datuakEditatu.css">	
 		</head>
 		
 		<body>
-			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
-			<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>	<!- MENU botoia ipintzea, klikatzerakoan menu-ra joan !>
+			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		
+			<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>	
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			<div class="container">
 				<div class="comment">Zure erabiltzailearen datuak aldatu ahal dituzu, NAN izan ezik, edo erabiltzailea ezabatu:</div>
@@ -58,40 +58,40 @@
 					<form  method="post" onsubmit="return erabiltzaileaAldatu()">
 						<table>
 							<tr>
-								<td>IZEN ABIZENAK:</td>		<!- IZEN ABIZENAK laukia ipintzea !>
+								<td>IZEN ABIZENAK:</td>		
 								<td><input type="text" name="izenAbizenak" id="izenAbizenak" value="';echo $izenAbizenak;echo'"></td>
 							</tr>
 							<tr>
-								<td>NAN:</td>		<!- NAN laukia ipintzea !>
+								<td>NAN:</td>		
 			    					<td><input type="text" name="nan" id="nan" value="';echo $nan;echo'" readonly></td>
 							</tr>
 							<tr>
 							<tr>
-								<td>TELEFONOA:</td>		<!- TELEFONOA laukia ipintzea !>
+								<td>TELEFONOA:</td>		
 								<td><input type="number" name="telefonoa" value="'; echo $tlf;echo'"></td>
 							</tr>
 							<tr>
-								<td>JAIOTZE DATA:</td>		<!- JAIOTZE DATA laukia ipintzea !>
+								<td>JAIOTZE DATA:</td>		
 								<td><input type="date" name="jaiotzeData" value="'; echo $jaiotzeData;echo'"></td>
 							</tr>
 							<tr>
-								<td>EMAIL:</td>		<!- EMAIL laukia ipintzea !>
+								<td>EMAIL:</td>		
 								<td><input type="text" name="email" value="'; echo $email;echo'"></td>
 							</tr>
 							<tr>
-								<td>GAKOA:</td>		<!- GAKOA laukia ipintzea !>
+								<td>GAKOA:</td>		
 								<td><input type="text" name="gakoa" value="';echo $gakoa; echo'"></td>
 							</tr>
 							<tr>
-								<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=<?php echo $lehenNan; ?>" id="gorde" name="gorde" value="GORDE" class="button"></p></td>		<!- GORDE botoia ipintzea, klikatzerakoan erabiltzaileaAldatu.php-ra joan !>
-								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="ERABILTZAILEA EZABATU" onclick="confirmEzabatu()" class="button"></p></td>	<!- EZABATU botoia ipintzea !>
+								<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=<?php echo $lehenNan; ?>" id="gorde" name="gorde" value="GORDE" class="button"></p></td>	
+								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="ERABILTZAILEA EZABATU" onclick="confirmEzabatu()" class="button"></p></td>	
 
 							</tr>
 						</table>
 					</form>
 				</div>
 			</div></div>
-			<script src="js/datuakEditatu.js"></script>	<!- datuakEditatu.js erabiltzea !>
+			<script src="js/datuakEditatu.js"></script>	
 		
 		</body>
 	</html>';
