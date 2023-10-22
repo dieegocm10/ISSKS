@@ -33,7 +33,7 @@ if (mysqli_num_rows($query1) == 0) {
                     <p>ERROR</p>
                     <img class="image" src="irudiak/error.png" width="200" height="150">
                     <p>NAN edo pasahitza txarto sartu dituzu!!</p>
-                    <td><a href="index.html"><input type="button" name="Saiatu Berriro" value="Saiatu Berriro" class="button"></a></td>		<!- SAIATU BERRIRO botoia ipintzea, klikatzerakoan index.html-ra joan !>
+                    <td><a href="index.html"><input type="button" name="Saiatu Berriro" value="Saiatu Berriro" class="button"></a></td>	
                 </div>
             </body>
         </html>';
