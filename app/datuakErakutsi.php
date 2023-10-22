@@ -4,7 +4,6 @@ $username = "admin";
 $password = "test";
 $db = "database";
 
-
 $NAN = $_GET['parametro1'];	//Bidali dioten "parametro1" aldagaia, aldagai batean gorde
 $gakoa = $_GET['parametro2'];	//Bidali dioten "parametro2" aldagaia, aldagai batean gorde
 
@@ -15,10 +14,10 @@ if ($conn->connect_error) {  //Konexioa ondo egin den konprobatu
 
 $query = mysqli_query($conn, "SELECT * FROM AUTOA")
     or die(mysqli_error($conn));	//Saiatu auto guztien informazio guztia lortzea
+?>
 
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Zure Flota</title> 
     <link rel="stylesheet" href="css/datuakErakutsi.css">	
@@ -60,10 +59,8 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
     		</div>
     	</div>
 </body>
-
 </html>
 
 <?php
 mysqli_close($conn);	//Konexioa itxi
 ?>
-
