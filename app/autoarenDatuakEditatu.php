@@ -42,14 +42,14 @@
 				}
 
 			</script>
-			<title>Denda</title>	<!- Izenburuan "Denda" ipini !>
-			<link rel="stylesheet" href="css/autoarenDatuakEditatu.css">	<!- autoarenDatuakEditatu.css erabiltzea diseinua egiteko !>
+			<title>Denda</title>	
+			<link rel="stylesheet" href="css/autoarenDatuakEditatu.css">	
 		</head>
 		
 		<body>
-			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
-			<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>	<!- MENU botoia ipintzea, klikatzerakoan menu-ra joan !>
-			<td><a href="datuakErakutsi.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="FLOTA" value="FLOTA" class="button"></a></td>	<!- FLOTA botoia ipintzea, klikatzerakoan datuakErakutsi.php-ra joan !>
+			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		
+			<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>	
+			<td><a href="datuakErakutsi.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="FLOTA" value="FLOTA" class="button"></a></td>	
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			<div class="container">
 				<div class="comment">Autoaren datuak aldatu ahal dituzu, matrikula izan ezik, edo autoa ezabatu:</div>
@@ -79,14 +79,13 @@
 								<td><input type="text" name="modeloa" value="'; echo $Modeloa;  echo'"></td>
 							</tr>
 							<tr>
-								<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde" class="button"></p></td>	<!- GORDE botoia ipintzea, klikatzerakoan autoaAldatu.php-ra joan !>
-								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" class="button" onclick="confirmEzabatu()" /></p></td>	<!- EZABATU botoia ipintzea !>
-							</tr>
+								<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde" class="button"></p></td>	
+								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" class="button" onclick="confirmEzabatu()" /></p></td>	
 						</table>
 					</form>
 				</div>
 			</div></div>
-			<script src="js/autoarenDatuakEditatu.js"></script>	<!- autoarenDatuakEditatu.js erabiltzea !>
+			<script src="js/autoarenDatuakEditatu.js"></script>	
 		</body>
 	</html>';
 ?>
