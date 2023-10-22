@@ -25,7 +25,7 @@
                               WHERE Matrikula = '$lehenMatrikula'")
   	or die (mysqli_error($conn));  //Saiatu datu basean "lehenMatrikula" oinarri bezala erabiliz, autoaren atributuak eguneratzea
 
-   header("Location: datuakErakutsi.php");
+   header("Location: datuakErakutsi.php");  //datakErakutsi.php-ra joan
 
 
   mysqli_close($conn);  //Datu basearekin konexioa itxi eta irten
