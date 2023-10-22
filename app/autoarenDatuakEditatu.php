@@ -22,11 +22,11 @@
 
 	mysqli_close($conn);  //Datu basearekin konexioa itxi
 
-	$Marka = $row["Marka"];  //Bidali dioten "Marka" aldagaia, aldagai batean gorde
-	$Prezioa = $row["Prezioa"];  //Bidali dioten "Prezioa" aldagaia, aldagai batean gorde
-	$Matrikula = $row["Matrikula"];  //Bidali dioten "Matrikula" aldagaia, aldagai batean gorde
-	$KarburanteMota = $row["KarburanteMota"];  //Bidali dioten "KarburanteMota" aldagaia, aldagai batean gorde
-	$Modeloa = $row["Modeloa"];  //Bidali dioten "Modeloa" aldagaia, aldagai batean gorde
+	$Marka = $row["Marka"];	//Aurkitu duen "Marka", aldagai batean gorde
+	$Prezioa = $row["Prezioa"];	//Aurkitu duen "Prezioa", aldagai batean gorde
+	$Matrikula = $row["Matrikula"];	//Aurkitu duen "Matrikula", aldagai batean gorde
+	$KarburanteMota = $row["KarburanteMota"];	//Aurkitu duen "KarburanteMota", aldagai batean gorde
+	$Modeloa = $row["Modeloa"];	//Aurkitu duen "Modeloa", aldagai batean gorde
   
 	echo '<html>
 		<head>
