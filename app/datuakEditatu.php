@@ -82,14 +82,14 @@
 				    margin-top: 20px; 
 				}
 				.button {
-				    background-color: #4285f4;
-				    color: #fff;
-				    padding: 10px 20px;
-				    border: none;
-				    border-radius: 5px;
-				    margin-top: 20px;
-				    text-decoration: none;
-				}
+            			    background-color: #4285f4;
+            			    color: #fff;
+            			    padding: 10px 20px;
+            		            border: none;
+            			    border-radius: 5px;
+            			    margin-top: 20px;
+            			    text-decoration: none;
+        			}
 			</style>
 		</head>
 		
@@ -100,6 +100,7 @@
 			<div class="container">
 				<div class="comment">Zure erabiltzailearen datuak aldatu ahal dituzu, NAN izan ezik:</div>
         			<img class="image" src="irudiak/editar.png" width"600" height"400">
+        		
 				<div class="data-container">
 					<form  method="post" onsubmit="return erabiltzaileaAldatu()">
 						<table>
@@ -129,8 +130,9 @@
 								<td><input type="text" name="gakoa" value="';echo $gakoa; echo'"></td>
 							</tr>
 							<tr>
-								<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=';echo $lehenNan; echo '" id="gorde"name="gorde" value="Gorde"></p></td>
-								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Erabiltzailea ezabatu" onclick="confirmEzabatu()" /></p></td>
+								<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=<?php echo $lehenNan; ?>" id="gorde" name="gorde" value="GORDE" class="button"></p></td>
+								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="ERABILTZAILEA EZABATU" onclick="confirmEzabatu()" class="button"></p></td>
+
 							</tr>
 						</table>
 					</form>
