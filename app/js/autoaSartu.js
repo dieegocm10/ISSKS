@@ -11,7 +11,7 @@
 				garbiBtn.addEventListener("click", function() {
 					var elementua = document.querySelectorAll("input[type=text], input[type=number], input[type=date], input[type=email]");
 					elementua.forEach(function(campo) {
-					    campo.value = "";});
+					    campo.value = "";});	//"Garbitu" botoian klikatzerakoan, lauki guztiak hustu
 				});
 			});
 			
