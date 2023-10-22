@@ -68,7 +68,7 @@
 				  	return false;
 				}
 				else{
-					var regex = /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g;
+					var regex = /^[a-zA-Z\s]+$/;
 					if(!regex.test(izenAbizenak)){
 						 alert("Izen Abizenetan bakarrik letrak jarri ahal dira");
 						 return false;
