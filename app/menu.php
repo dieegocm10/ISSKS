@@ -7,45 +7,7 @@ $gakoa = $_GET['parametro2'];
 <html>
 <head>
     <title>MENU</title>
-    <style>
-        body {
-            background-color: #BAE1E0; 
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        .image {
-            margin-bottom: 20px;
-        }
-        .comment {
-            background-color: #4285f4; 
-            color: #fff; 
-            padding: 10px;
-            font-size: 24px;
-            position: relative;
-            top: -50px; 
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-        }
-        .button {
-            background-color: #4285f4; 
-            color: #fff; 
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/menu.css">
 </head>
 <body>
 	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>

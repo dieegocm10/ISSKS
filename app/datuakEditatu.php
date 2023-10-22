@@ -44,59 +44,12 @@
 
 			</script>
 			<title>Denda</title>
-			<style>
-				 body {
-				    background-color: #BAE1E0; 
-				    font-family: Arial, sans-serif;
-				    text-align: center;
-				    margin: 0;
-				    padding: 0;
-				}
-				.container {
-				    display: flex;
-				    flex-direction: column;
-				    align-items: center;
-				    max-width: 100%;
-				    padding: 20px;
-				}
-				.comment {
-				    background-color: #4285f4;
-				    color: #fff;
-				    padding: 10px;
-				    font-size: 24px;
-				    margin-bottom: 20px;
-				}
-				.image {
-				    max-width: 100%;
-				    height: auto;
-				    margin-bottom: 20px;
-				}
-				.data-container {
-				    background-color: #fff;
-				    padding: 20px;
-				    border-radius: 5px;
-				    box-shadow: 0 0 10px;
-				}
-				.button-container {
-				    display: flex;
-				    justify-content: space-between;
-				    margin-top: 20px; 
-				}
-				.button {
-            			    background-color: #4285f4;
-            			    color: #fff;
-            			    padding: 10px 20px;
-            		            border: none;
-            			    border-radius: 5px;
-            			    margin-top: 20px;
-            			    text-decoration: none;
-        			}
-			</style>
+			<link rel="stylesheet" href="css/datuakEditatu.css">
 		</head>
 		
 		<body>
 			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
-			<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>
+			<td><a href="menu.php?parametro1=';echo $NAN ;echo '&parametro2=';echo $gakoa ;echo '"><input type="button" name="MENU" value="MENU" class="button"></a></td>
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			<div class="container">
 				<div class="comment">Zure erabiltzailearen datuak aldatu ahal dituzu, NAN izan ezik, edo erabiltzailea ezabatu:</div>
@@ -139,109 +92,7 @@
 					</form>
 				</div>
 			</div></div>
-			<script>
-				document.addEventListener("DOMContentLoaded", function() {
-					var gordeBtn = document.getElementById("gorde");
-					
-					var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;
-					var nan = document.getElementsByName("nan")[0].value;
-					var telefonoa = document.getElementsByName("telefonoa")[0].value;
-					var jaiotzeData = document.getElementsByName("jaiotzeData")[0].value;
-					var email = document.getElementsByName("email")[0].value;
-					var gakoa = document.getElementsByName("gakoa")[0].value;
-					
-					//BOTOI GORDE
-					gordeBtn.addEventListener("click", function() {
-						if(datuakKonprobatu()){
-						    erabiltzaileaAldatu()
-						}
-						else{
-						    return false;
-						}
-					});
-				});
-				
-
-				function datuakKonprobatu(){
-					if (izenAbizenak == "") {
-						alert("IZEN ABIZENAK ez dira jarri");
-					  	return false;
-					}
-					
-					if (nan == "") {
-						alert("NAN ez da jarri");
-					  	return false;
-					}
-					else{
-						if (nan.length !== 9) {
-							alert("NAN txarto jarri da");
-							return false;
-						}
-						else{
-							var zenbakiak = parseInt(nan.substring(0, 8));
-							 var letra = nan.charAt(8);
-							 var hondarra = parseInt(zenbakiak) % 23;
-							 var letrak = "TRWAGMYFPDXBNJZSQVHLCKE";
-							 var kalkulatutakoLetra = letrak.charAt(hondarra);
-							 if (kalkulatutakoLetra != letra) {
-							 	alert("NAN txarto jarri da");
-							 	return false;
-							 }	 
-	  					}
-					}
-					if (telefonoa == "") {
-						alert("TELEFONOA ez da jarri");
-					  	return false;
-					}
-					else{
-						if(document.getElementsByName("telefonoa")[0].value.length != 9){
-							alert("TELEFONOAK 9 zenbaki izan behar ditu");
-							return false;
-						}
-					}
-					if (jaiotzeData == "") {
-						alert("JAIOTZE DATA ez da jarri");
-					  	return false;
-					}
-					if (email == "") {
-						alert("EMAIL ez da jarri");
-					  	return false;
-					}
-					else{
-						var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-						if(!regex.test(email)){
-							alert("EMAIL txarto jarri da");
-							return false;
-						}
-					}
-					if (gakoa == "") {
-						alert("GAKOA ez da jarri");
-					  	return false;
-					}
-				}
-				function erabiltzaileaAldatu(){
-					//DATUAK BIDALI
-					var datuak = {
-						  izenAbizenak: izenAbizenak,
-						  nan: nan,
-						  telefonoa: telefonoa,
-						  email: email,
-						  jaiotzeData: jaiotzeData,
-						  gakoa: gakoa
-					};
-					var conf = {
-						  method: "POST",
-						  body: JSON.stringify(datuak), 
-						  headers: {
-						    	"Content-Type": "application/json"
-						  }
-					};
-
-					fetch("erabiltzaileaAldatu.php", conf)
-				}
-				
-				
-			</script>
+			<script src="js/datuakEditatu.js"></script>
 		
 		</body>
 	</html>';

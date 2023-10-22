@@ -22,60 +22,7 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 
 <head>
     <title>Zure Flota</title>
-    <style>
-        body {
-            background-color: #BAE1E0;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 100%;
-            padding: 20px;
-        }
-
-        .comment {
-            background-color: #4285f4;
-            color: #fff;
-            padding: 10px;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .image {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .data-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .button {
-            background-color: #4285f4;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            text-decoration: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/datuakErakutsi.css">
 </head>
 
 <body>
