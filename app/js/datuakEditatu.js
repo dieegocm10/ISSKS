@@ -28,27 +28,6 @@
 					  	return false;
 					}
 					
-					if (nan == "") {
-						alert("NAN ez da jarri");
-					  	return false;
-					}
-					else{
-						if (nan.length !== 9) {
-							alert("NAN txarto jarri da");
-							return false;
-						}
-						else{
-							var zenbakiak = parseInt(nan.substring(0, 8));
-							 var letra = nan.charAt(8);
-							 var hondarra = parseInt(zenbakiak) % 23;
-							 var letrak = "TRWAGMYFPDXBNJZSQVHLCKE";
-							 var kalkulatutakoLetra = letrak.charAt(hondarra);
-							 if (kalkulatutakoLetra != letra) {
-							 	alert("NAN txarto jarri da");
-							 	return false;
-							 }	 
-	  					}
-					}
 					if (telefonoa == "") {
 						alert("TELEFONOA ez da jarri");
 					  	return false;
