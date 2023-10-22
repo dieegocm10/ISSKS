@@ -1,4 +1,4 @@
-        body {
+        body {        /* Gorputzaren diseinua egiteko*/
             background-color: #BAE1E0;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -6,7 +6,7 @@
             padding: 0;
         }
 
-        .comment {
+        .comment {        /* Iruzkinen diseinua egiteko*/
             background-color: #4285f4;
             color: #fff;
             padding: 10px;
@@ -14,14 +14,14 @@
             margin-bottom: 120px;
         }
 
-        .container {
+        .container {         /* Kontainerren diseinua egiteko*/
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
 
-        .button {
+        .button {        /* Botoien diseinua egiteko*/
             background-color: #4285f4;
             color: #fff;
             padding: 10px 20px;
@@ -30,11 +30,11 @@
             text-decoration: none;
         }
 
-        .image {
+        .image {        /* Irudien diseinua egiteko*/
             max-width: 100%;
             height: auto;
         }
 
-        table {
+        table {        /* Taulen diseinua egiteko*/
             margin: 20px auto; /* Esto centra la tabla horizontalmente */
         }
