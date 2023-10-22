@@ -68,6 +68,6 @@
 					  }
 				};
 
-				fetch('autoaGoorde.php', conf)
+				fetch('autoaGorde.php', conf)
 			}
 })();
