@@ -5,29 +5,28 @@ $password = "test";
 $db = "database";
 
 
-$NAN = $_GET['parametro1'];
-$gakoa = $_GET['parametro2'];
+$NAN = $_GET['parametro1'];	//Bidali dioten "parametro1" aldagaia, aldagai batean gorde
+$gakoa = $_GET['parametro2'];	//Bidali dioten "parametro2" aldagaia, aldagai batean gorde
 
-$conn = mysqli_connect($hostname, $username, $password, $db);
-if ($conn->connect_error) {
+$conn = mysqli_connect($hostname, $username, $password, $db);  //Datu basearekin konektatu
+if ($conn->connect_error) {  //Konexioa ondo egin den konprobatu
     die("Database connection failed: " . $conn->connect_error);
 }
 
 $query = mysqli_query($conn, "SELECT * FROM AUTOA")
-    or die(mysqli_error($conn));
-?>
+    or die(mysqli_error($conn));	//Saiatu auto guztien informazio guztia lortzea
 
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Zure Flota</title>
-    <link rel="stylesheet" href="css/datuakErakutsi.css">
+    <title>Zure Flota</title> 	<!- Izenburuam Flota ipini !>
+    <link rel="stylesheet" href="css/datuakErakutsi.css">	<!- datuakErakutsi.css erabiltzea diseinua egiteko !>
 </head>
 
 <body>
-	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
-	<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>
+	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
+	<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>	<!- MENU botoia ipintzea, klikatzerakoan menu-ra joan !>
 	<div align="center" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">
 	    	<div class="container">
 			<div class="comment">Flota:</div>
@@ -51,7 +50,7 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 					    <td>{$a}</td>
 					    <td>{$b}</td>
 					    <td><a href=\"autoarenDatuakEditatu.php?parametro1={$a}&parametro2={$b}&parametro3={$NAN}&parametro4={$gakoa}\"><input type=\"button\" name=\"sartu\" value=\"Editatu\" class=\"button\"></a></td>
-					    </tr>";
+					    </tr>";	<!- EDITATU botoia ipintzea, klikatzerakoan autoarenDatuakEditatu joan !>
 					}
 					?>
 				    </tbody>
@@ -65,6 +64,6 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 </html>
 
 <?php
-mysqli_close($conn);
+mysqli_close($conn);	//Konexioa itxi
 ?>
 
