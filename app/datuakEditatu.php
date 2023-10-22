@@ -4,16 +4,17 @@
 	$username = "admin";
 	$password = "test";
 	$db = "database";
+	
+	$NAN = $_GET['parametro1'];
+	$gakoa = $_GET['parametro2']; 
 
 	$conn = mysqli_connect($hostname, $username, $password, $db);
 	if ($conn->connect_error) {
     		die("Database connection failed: " . $conn->connect_error);
 	}
 
-	$a = $_GET['parametro1'];
-	$b = $_GET['parametro2']; 
 
-	$query1 = mysqli_query($conn, "SELECT * FROM ERABILTZAILEA WHERE IzenAbizenak = '$a' AND Gakoa = '$b'")
+	$query1 = mysqli_query($conn, "SELECT * FROM ERABILTZAILEA WHERE NAN = '$NAN' AND Gakoa = '$gakoa'")
     		or die(mysqli_error($conn));
 
 	$row = mysqli_fetch_array($query1);
@@ -95,7 +96,7 @@
 		
 		<body>
 			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
-			<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>
+			<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			<div class="container">
 				<div class="comment">Zure erabiltzailearen datuak aldatu ahal dituzu, NAN izan ezik:</div>

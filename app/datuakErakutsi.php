@@ -4,6 +4,10 @@ $username = "admin";
 $password = "test";
 $db = "database";
 
+
+$NAN = $_GET['parametro1'];
+$gakoa = $_GET['parametro2'];
+
 $conn = mysqli_connect($hostname, $username, $password, $db);
 if ($conn->connect_error) {
     die("Database connection failed: " . $conn->connect_error);
@@ -76,7 +80,7 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 
 <body>
 	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
-	<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>
+	<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>
 	<div align="center" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">
 	    	<div class="container">
 			<div class="comment">Flota:</div>
@@ -99,7 +103,7 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 					    echo "<tr>
 					    <td>{$a}</td>
 					    <td>{$b}</td>
-					    <td><a href=\"autoarenDatuakEditatu.php?parametro1={$a}&parametro2={$b}\"><input type=\"button\" name=\"sartu\" value=\"Editatu\" class=\"button\"></a></td>
+					    <td><a href=\"autoarenDatuakEditatu.php?parametro1={$a}&parametro2={$b}&parametro3={$NAN}&parametro4={$gakoa}\"><input type=\"button\" name=\"sartu\" value=\"Editatu\" class=\"button\"></a></td>
 					    </tr>";
 					}
 					?>
