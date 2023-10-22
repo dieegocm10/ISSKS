@@ -99,7 +99,7 @@
 			<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			<div class="container">
-				<div class="comment">Zure erabiltzailearen datuak aldatu ahal dituzu, NAN izan ezik:</div>
+				<div class="comment">Zure erabiltzailearen datuak aldatu ahal dituzu, NAN izan ezik, edo erabiltzailea ezabatu:</div>
         			<img class="image" src="irudiak/editar.png" width"600" height"400">
         		
 				<div class="data-container">

@@ -99,7 +99,7 @@
 			<td><a href="datuakErakutsi.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="FLOTA" value="FLOTA" class="button"></a></td>
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			<div class="container">
-				<div class="comment">Autoaren datuak aldatu edo ezabatu ahal dituzu:</div>
+				<div class="comment">Autoaren datuak aldatu ahal dituzu, matrikula izan ezik, edo autoa ezabatu:</div>
       				<img src="irudiak/5.jpeg" width="300" height="250">
 				<div class="data-container">
 
@@ -115,7 +115,7 @@
 							</tr>
 							<tr>
 								<td>MATRIKULA:</td>
-								<td><input type="text" name="matrikula" value="'; echo $Matrikula; echo'"></td>
+								<td><input type="text" name="matrikula" value="'; echo $Matrikula; echo'" readonly></td>
 							</tr>
 							<tr>
 								<td>KARBURANTE MOTA:</td>
