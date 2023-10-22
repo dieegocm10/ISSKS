@@ -106,8 +106,6 @@
 							<tr>
 								<td>MARKA:</td>
 								<td><input type="text" name="marka" value="';echo $Marka;echo'"></td>
-
-
 							</tr>
 							<tr>
 								<td>PREZIOA:</td>
@@ -126,8 +124,8 @@
 								<td><input type="text" name="modeloa" value="'; echo $Modeloa;  echo'"></td>
 							</tr>
 							<tr>
-								<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde"></p></td>
-								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" onclick="confirmEzabatu()" /></p></td>
+								<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde" class="button"></p></td>
+								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" class="button" onclick="confirmEzabatu()" /></p></td>
 							</tr>
 						</table>
 					</form>
