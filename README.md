@@ -50,7 +50,7 @@ Web Sistemara sartzeko erabiltzaile bat erabili beharko da eta erabiltzaile horr
 -  Izen abizenak textua soilik.
 -  NAN 11111111Z formatua soilik onartuko du eta letra zenbakiei dagokiola ziurtatuko da.
 -  Telefonoa 9 zenbaki soilik.
--  Jaiotze data datak uuuu-hh-ee formatuan soilik (Adib. 26/08/2021).
+-  Jaiotze data datak ee-hh-uuuu formatuan soilik (Adib. 26/08/2021).
 -  Email email egokiak soilik (adibidea@zerbitzaria.extentsioa).
 
 Autoen atributuen formatoa hurrengoa izango da:
