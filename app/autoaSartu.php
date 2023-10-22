@@ -13,7 +13,7 @@ $gakoa = $_GET['parametro2'];  //Bidali dioten "parametro2" aldagaia, aldagai ba
 
 <body>
 	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
-	<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>	<!- MENU botoia ipintzea, klikatzerakoan menu-ra joan !>
+	<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>	<!- MENU botoia ipintzea, klikatzerakoan menu.php-ra joan !>
 	<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
     <div class="container">
         <div class="comment">Autoaren ezaugarri guztiak zure gustura bete:</div>
