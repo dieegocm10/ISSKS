@@ -27,7 +27,7 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 
 <body>
 	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
-	<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>
+	<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>
 	<div align="center" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">
 	    	<div class="container">
 			<div class="comment">Flota:</div>
