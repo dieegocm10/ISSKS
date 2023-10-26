@@ -24,13 +24,8 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 </head>
 
 <body>
-<<<<<<< HEAD
 	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
-	<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>
-=======
-	<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		
 	<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>	
->>>>>>> c6ee04d3fc6e2758d3f7b3c5761bc58a4f4c9426
 	<div align="center" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">
 	    	<div class="container">
 			<div class="comment">Flota:</div>
