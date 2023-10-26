@@ -1,0 +1,40 @@
+        body {        /* Gorputzaren diseinua egiteko*/
+            background-color: #BAE1E0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .comment {        /* Iruzkinen diseinua egiteko*/
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px;
+            font-size: 48px;
+            margin-bottom: 120px;
+        }
+
+        .container {         /* Kontainerren diseinua egiteko*/
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .button {        /* Botoien diseinua egiteko*/
+            background-color: #4285f4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .image {        /* Irudien diseinua egiteko*/
+            max-width: 100%;
+            height: auto;
+        }
+
+        table {        /* Taulen diseinua egiteko*/
+            margin: 20px auto; /* Esto centra la tabla horizontalmente */
+        }
