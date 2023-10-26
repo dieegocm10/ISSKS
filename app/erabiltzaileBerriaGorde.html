@@ -1,15 +1,15 @@
 <html>
 	<head>
-		<title>Denda</title>
-		<link rel="stylesheet" href="css/erabiltzaileBerriaGorde.css">
+		<title>Denda</title>	<!- Izenburuan "Denda" ipini !>
+		<link rel="stylesheet" href="css/erabiltzaileBerriaGorde.css">	<!- erabiltzaileBerriaGorde.css erabiltzea diseinua egiteko !>
 	</head>
 	
 	<body>
 		
-		<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button" align="center"></a></td>
+		<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button" align="center"></a></td>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
 		<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 		<img src="irudiak/ESTE.gif" width="450" height="250">
-		<form  method="post" action="erabiltzaileBerriaGorde.php" onsubmit="return erabiltzaileaGorde()"><table>
+		<form  method="post" action="erabiltzaileBerriaGorde.php" onsubmit="return erabiltzaileaGorde()"><table>		<!- erabiltzaileBerriaGorde.php-rq joan !>
 			<tr>
 				<td>IZEN ABIZENAK:</td>	<!-Zure izen-abizen sartzeko tokia!>
 				<td><input type="text" name="izenAbizenak" id="izenAbizenak" ></td>
@@ -35,13 +35,13 @@
 				<td><input type="text" name="gakoa" ></td>
 			</tr>
 			<tr>
-				<td><p align="right"><input type="submit" id="gorde"name="gorde" value="GORDE" class="button"></p></td>
-				<td><p align="left"><input type="button" id="garbitu"name="garbitu" value="GARBITU" class="button"></p></td>
+				<td><p align="right"><input type="submit" id="gorde"name="gorde" value="GORDE" class="button"></p></td>		<!- GORDE botoia ipintzea !>
+				<td><p align="left"><input type="button" id="garbitu"name="garbitu" value="GARBITU" class="button"></p></td>	<!- GARBITU botoia ipintzea !>
 			</tr>
 		</table></div>
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {
-				var gordeBtn = document.getElementById("gorde");
+				var gordeBtn = document.getElementById("gorde");	
 				var garbiBtn = document.getElementById("garbitu");
 				//BOTOIAK GORDE
 				gordeBtn.addEventListener("click", function() {
@@ -56,16 +56,16 @@
 			});
 			
 			function erabiltzaileaGorde(){
-				var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;
-				var nan = document.getElementsByName("nan")[0].value;
-				var telefonoa = document.getElementsByName("telefonoa")[0].value;
-				var jaiotzeData = document.getElementsByName("jaiotzeData")[0].value;
-				var email = document.getElementsByName("email")[0].value;
-				var gakoa = document.getElementsByName("gakoa")[0].value;
+				var izenAbizenak = document.getElementsByName("izenAbizenak")[0].value;	//izenAbizenak balioa aldagai batean gorde	
+				var nan = document.getElementsByName("nan")[0].value;	//NAN balioa aldagai batean gorde	
+				var telefonoa = document.getElementsByName("telefonoa")[0].value;	//telefono balioa aldagai batean gorde	
+				var jaiotzeData = document.getElementsByName("jaiotzeData")[0].value;	//jaiotzeData balioa aldagai batean gorde	
+				var email = document.getElementsByName("email")[0].value;	//email balioa aldagai batean gorde	
+				var gakoa = document.getElementsByName("gakoa")[0].value;	//gakoa balioa aldagai batean gorde	
 
-				if (izenAbizenak == "") {
+				if (izenAbizenak == "") {	//Konprobatu IzenAbizenak hutsik badago
 					alert("IZEN ABIZENAK ez dira jarri");
-				  	return false;
+				  	return false;	//Hutsik badago alerta eman eta false bueltatu
 				}
 				else{
 					var regex = /^[a-zA-Z\s]+$/;
@@ -74,14 +74,14 @@
 						 return false;
 					}
 				}
-				if (nan == "") {
+				if (nan == "") {	//Konprobatu nan hutsik badago
 					alert("NAN ez da jarri");
-				  	return false;
+				  	return false;	//Hutsik badago alerta eman eta false bueltatu
 				}
-				else{
+				else{	//Konprbatu NAN formatua egokia dela
 					if (nan.length !== 9) {
 						alert("NAN txarto jarri da");
-						return false;
+						return false;	//Egokia ez bada alerta eman eta false bueltatu
 					}
 					else{
 						var zenbakiak = parseInt(nan.substring(0, 8));
@@ -91,38 +91,38 @@
 						 var kalkulatutakoLetra = letrak.charAt(hondarra);
 						 if (kalkulatutakoLetra != letra) {
 						 	alert("NAN txarto jarri da");
-						 	return false;
+						 	return false;	//Egokia ez bada alerta eman eta false bueltatu
 						 }	 
   					}
 				}
-				if (telefonoa == "") {
+				if (telefonoa == "") {	//Konprobatu telefonoa hutsik badago
 					alert("TELEFONOA ez da jarri");
-				  	return false;
+				  	return false;	//Hutsik badago alerta eman eta false bueltatu
 				}
-				else{
+				else{	//Konprbatu telefonoaren formatua egokia dela
 					if(document.getElementsByName("telefonoa")[0].value.length != 9){
 						alert("TELEFONOAK 9 zenbaki izan behar ditu");
-						return false;
+						return false;	//Egokia ez bada alerta eman eta false bueltatu
 					}
 				}
-				if (jaiotzeData == "") {
+				if (jaiotzeData == "") {	//Konprobatu jaiotzeData hutsik badago
 					alert("JAIOTZE DATA ez da jarri");
 				  	return false;
 				}
-				if (email == "") {
+				if (email == "") {	//Konprobatu email hutsik badago
 					alert("EMAIL ez da jarri");
-				  	return false;
+				  	return false;	//Hutsik badago alerta eman eta false bueltatu
 				}
-				else{
+				else{	//Konprbatu email formatua egokia dela
 					var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 					if(!regex.test(email)){
 						alert("EMAIL txarto jarri da");
-						return false;
+						return false;	//Egokia ez bada alerta eman eta false bueltatu
 					}
 				}
-				if (gakoa == "") {
+				if (gakoa == "") {	//Konprobatu gakoa hutsik badago
 					alert("GAKOA ez da jarri");
-				  	return false;
+				  	return false;	//Hutsik badago alerta eman eta false bueltatu
 				}
 				//DATUAK BIDALI
 				var datuak = {
@@ -141,7 +141,7 @@
 					  }
 				};
 
-				fetch('erabiltzaileBerriaGorde.php', conf);
+				fetch('erabiltzaileBerriaGorde.php', conf);	//erabiltzaileBerriaGorde.php-ra datuak bidali
 			}
 		</script>
 

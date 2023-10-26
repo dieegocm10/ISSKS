@@ -1,21 +1,21 @@
-body {
+body {        /* Gorputzaren diseinua egiteko*/
         background-color: #BAE1E0; 
         font-family: Arial, sans-serif;
         text-align: center;
         margin: 0;
         padding: 0;
 }
-.container {
+.container {        /* Kontainerren diseinua egiteko*/
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
 }
-.image {
+.image {        /* Irudien diseinua egiteko*/
         margin-bottom: 20px;
         border-radius: 23px;
 }
-.comment {
+.comment {        /* Iruzkinen diseinua egiteko*/
         background-color: #4285f4; 
         color: #fff; 
         padding: 10px;
@@ -23,11 +23,11 @@ body {
         position: relative;
         top: -50px; 
 }
-.button-container {
+.button-container {        /* Botoi-kontainerren diseinua egiteko*/
         display: flex;
         justify-content: center;
 }
-.button {
+.button {        /* Botoien diseinua egiteko*/
         background-color: #4285f4; 
         color: #fff; 
         padding: 10px 20px;
