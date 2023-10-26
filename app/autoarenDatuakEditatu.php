@@ -11,11 +11,8 @@
 	}
 
 	$a = $_GET['parametro1'];  //Bidali dioten "parametro1" aldagaia, aldagai batean gorde
-	$b = $_GET['parametro2'];  //Bidali dioten "parametro2" aldagaia, aldagai batean gorde
-	$NAN = $_GET['parametro3'];   //Bidali dioten "parametro3" aldagaia, aldagai batean gorde
-	$gakoa = $_GET['parametro4'];    //Bidali dioten "parametro4" aldagaia, aldagai batean gorde
 
-	$query1 = mysqli_query($conn, "SELECT * FROM AUTOA WHERE Marka = '$a' AND Prezioa = '$b'")
+	$query1 = mysqli_query($conn, "SELECT * FROM AUTOA WHERE Matrikula = '$a'")
     		or die(mysqli_error($conn));	//Saiatu autoaren informazio guztia lortzea, a eta b aldagaiak oinarri bezala erabilita
 
 	$row = mysqli_fetch_array($query1);
@@ -48,8 +45,8 @@
 		
 		<body>
 			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		
-			<td><a href="menu.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="MENU" value="MENU" class="button"></a></td>	
-			<td><a href="datuakErakutsi.php?parametro1=<?= $NAN ?>&parametro2=<?= $gakoa ?>"><input type="button" name="FLOTA" value="FLOTA" class="button"></a></td>	
+			<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>	
+			<td><a href="datuakErakutsi.php"><input type="button" name="FLOTA" value="FLOTA" class="button"></a></td>	
 			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			<div class="container">
 				<div class="comment">Autoaren datuak aldatu ahal dituzu, matrikula izan ezik, edo autoa ezabatu:</div>

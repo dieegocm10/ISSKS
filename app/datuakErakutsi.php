@@ -45,10 +45,11 @@ $query = mysqli_query($conn, "SELECT * FROM AUTOA")
 					while ($row = mysqli_fetch_array($query)) {
 					    $a = $row['Marka'];
 					    $b = $row['Prezioa'];
+					    $matrikula = $row['Matrikula'];
 					    echo "<tr>
 					    <td>{$a}</td>
 					    <td>{$b}</td>
-					    <td><a href=\"autoarenDatuakEditatu.php?parametro1={$a}&parametro2={$b}&parametro3={$NAN}&parametro4={$gakoa}\"><input type=\"button\" name=\"sartu\" value=\"Editatu\" class=\"button\"></a></td>
+					    <td><a href=\"autoarenDatuakEditatu.php?parametro1={$matrikula}\"><input type=\"button\" name=\"sartu\" value=\"Editatu\" class=\"button\"></a></td>
 					    </tr>";	
 					}
 					?>
