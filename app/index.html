@@ -3,12 +3,14 @@
 <head>
     <title>Denda</title>	<!- Izenburuan "Denda" ipini !>
     <link rel="stylesheet" href="css/index.css">	<!- index.css erabiltzea diseinua egiteko !>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
 </head>
 <body>
     <div class="container">
         <div class="comment">ONGI ETORRI DENDARA!!!!</div>
         <img class="image" src="irudiak/login.png" width="200" height="150">
-        <form method="post" action="pasahitzaKonprobatu.php" onsubmit="return erabiltzaileaKonprbatu()">	<!- SARTU botoia klikatzerakoan, pasahitzaKonprobatu.php-ra joateko !>
+        <form method="post" action="pasahitzaKonprobatu.php">	<!- SARTU botoia klikatzerakoan, pasahitzaKonprobatu.php-ra joateko !>
             <table>
                 <tr>
                     <td>NAN:</td>		<!- NAN laukia ipintzea !>

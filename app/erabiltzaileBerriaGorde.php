@@ -16,9 +16,17 @@
     		die("Database connection failed: " . $conn->connect_error);
   	}
   	mysqli_set_charset($conn, "utf8mb4");
-
-  	$query = mysqli_query($conn, "INSERT INTO ERABILTZAILEA VALUES ('$izenAbizenak', '$nan', '$gakoa', '$telefonoa', '$jaiotzeData', '$email')")
-    	or die (mysqli_error($conn));  //Saiatu datu basean erabiltzaile berri bat sartzea
+  	
+  	$sql="INSERT INTO ERABILTZAILEA VALUES ?,?,?,?,?,?";
+	$stmt=$conn->prepare($sql);
+	if($stmt){
+		$stmt->bind_param("sssiss",$izenAbizenak, $nan,$gakoa,$telefonoa,$jaiotzeData,$email);
+		$stmt->execute();
+		
+		$result = $stmt->get_result();
+		
+		$stmt->close();
+	}
     	
     	mysqli_close($conn);	//Datu basearekin konexioa itxi 
 
