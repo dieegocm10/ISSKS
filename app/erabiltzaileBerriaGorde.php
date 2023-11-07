@@ -17,7 +17,7 @@
   	}
   	mysqli_set_charset($conn, "utf8mb4");
   	
-  	$sql="INSERT INTO ERABILTZAILEA VALUES ?,?,?,?,?,?";
+  	$sql="INSERT INTO ERABILTZAILEA VALUES (?,?,?,?,?,?)";
 	$stmt=$conn->prepare($sql);
 	if($stmt){
 		$stmt->bind_param("sssiss",$izenAbizenak, $nan,$gakoa,$telefonoa,$jaiotzeData,$email);
