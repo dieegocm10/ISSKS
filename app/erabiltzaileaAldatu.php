@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	$hostname = "db";
-	$username = "admin";
-	$password = "test";
+	$username = "ISSKS";
+	$password = "LANA2";
 	$db = "database";
 	
 	$izenAbizenak = $_POST['izenAbizenak'];  //Bidali dioten "izenAbizenak" aldagaia, aldagai batean gorde

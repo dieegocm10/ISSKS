@@ -1,7 +1,7 @@
 <?php
 	$hostname = "db";
-	$username = "admin";
-	$password = "test";
+	$username = "ISSKS";
+	$password = "LANA2";
 	$db = "database";
 
 	$NAN = $_GET['parametro1'];	//Bidali dioten "parametro1" aldagaia, aldagai batean gorde

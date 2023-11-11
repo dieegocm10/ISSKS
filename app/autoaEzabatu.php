@@ -1,7 +1,7 @@
 <?php
 	  $hostname = "db";
-	  $username = "admin";
-	  $password = "test";
+	  $username = "ISSKS";
+	  $password = "LANA2";
 	  $db = "database";
 
 

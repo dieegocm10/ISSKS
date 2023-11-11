@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	$hostname = "db";
-	$username = "admin";
-	$password = "test";
+	$username = "ISSKS";
+	$password = "LANA2";
 	$db = "database";
 
 	$lehenNan = $_SESSION['NAN'];	//Bidali dioten "NAN" aldagaia, aldagai batean gorde

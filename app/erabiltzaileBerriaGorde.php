@@ -16,8 +16,8 @@
 	$hashedPassword = password_hash($passwordWithSalt, PASSWORD_BCRYPT); // Aplicar la función de hash usando Bcrypt
 
 	$hostname = "db";
-	$username = "admin";
-	$password = "test";
+	$username = "ISSKS";
+	$password = "LANA2";
 	$db = "database";
 
 	$conn = new mysqli($hostname, $username, $password, $db);

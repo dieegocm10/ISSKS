@@ -1,7 +1,7 @@
 <?php
 	  $hostname = "db";
-	  $username = "admin";
-	  $password = "test";
+	  $username = "ISSKS";
+	  $password = "LANA2";
 	  $db = "database";
 
 	  $marka = $_POST['marka'];  //Bidali dioten "marka" aldagaia, aldagai batean gorde

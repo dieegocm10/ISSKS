@@ -6,8 +6,8 @@
   	$modeloa = $_POST['modeloa'];  //Bidali dioten "modeloa" aldagaia, aldagai batean gorde
 
   	$hostname = "db";
-  	$username = "admin";
-  	$password = "test";
+  	$username = "ISSKS";
+	$password = "LANA2";
   	$db = "database";
 
   	$conn = mysqli_connect($hostname, $username, $password, $db);  //Datu basearekin konektatu
