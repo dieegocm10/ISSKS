@@ -9,6 +9,11 @@
 	if(empty($izenAbizenak) || empty($nan) || empty($telefonoa) || empty($email) || empty($jaiotzeData) || empty($gakoa)) {
 		die("Error: Todos los campos deben ser completados.");
 	}
+	
+	//preparar la gakoa para almacenar de forma segura
+	$gatza = bin2hex(random_bytes(16)); // Generar una sal aleatoria	
+	$passwordWithSalt = $gakoa . $gatza; // Concatenar la contraseña con la sal
+	$hashedPassword = password_hash($passwordWithSalt, PASSWORD_BCRYPT); // Aplicar la función de hash usando Bcrypt
 
 	$hostname = "db";
 	$username = "admin";
@@ -24,11 +29,11 @@
 
 	mysqli_set_charset($conn, "utf8mb4");
 
-	$sql = "INSERT INTO ERABILTZAILEA VALUES (?,?,?,?,?,?)"; 
+	$sql = "INSERT INTO ERABILTZAILEA VALUES (?,?,?,?,?,?,?)"; 
 	$stmt = $conn->prepare($sql); //se prepara la consulta parametrizada
 
 	if ($stmt) {
-		$stmt->bind_param("sssiss", $izenAbizenak, $nan, $gakoa, $telefonoa, $jaiotzeData, $email); // se introducen los parametros en la consulta
+		$stmt->bind_param("ssssiss", $izenAbizenak, $nan, $hashedPassword, $gatza, $telefonoa, $jaiotzeData, $email); // se introducen los parametros en la consulta
 	    	if ($stmt->execute()) {
 			$stmt->close();
 	    	}else {
