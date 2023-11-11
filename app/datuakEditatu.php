@@ -126,6 +126,13 @@
 					alert("GAKOA ez da jarri"); //Hutsik badago alerta eman eta false bueltatu
 					return false;
 			    	}
+			    	else{	//Konprbatu gakoa formatua egokia dela
+					var regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[a-z])[[a-zA-Z0-9.-]{6,}$/;
+					if(!regex.test(gakoa)){
+						alert("GAKOA ahula da, letra larriak, xeheak, zenbakiak eta gutxienez 6 karakterezko luzeera eduki behar du");
+						return false;	//Egokia ez bada alerta eman eta false bueltatu
+					}
+				}
 			}
 		</script>
 	</body>
