@@ -26,27 +26,24 @@ SET time_zone = "+00:00";
 -- `autoa` tabla sortzeko komandoak
 --
 CREATE TABLE AUTOA
- 	(Marka VARCHAR(30),
- 	Prezioa INT,
- 	Matrikula VARCHAR(30) NOT NULL,
- 	KarburanteMota VARCHAR(30),
- 	Modeloa VARCHAR(30),
- 	PRIMARY KEY (Matrikula))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-;
+	(Marka VARCHAR(30),
+	Prezioa INT,
+	Matrikula VARCHAR(30) NOT NULL,
+	KarburanteMota VARCHAR(30),
+	Modeloa VARCHAR(30),
+	PRIMARY KEY (Matrikula)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 --
 -- `erabiltzailea` tabla sortzeko komandoak
 --
 CREATE TABLE ERABILTZAILEA
- 	(IzenAbizenak VARCHAR(30),
- 	NAN VARCHAR(30) NOT NULL,
- 	Gakoa VARCHAR(30),
- 	Telefonoa INT,
- 	JaiotzeData VARCHAR(10),
- 	Email VARCHAR(50),
- 	PRIMARY KEY (NAN))ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-;
-
-
+	(IzenAbizenak VARCHAR(30),
+	NAN VARCHAR(30) NOT NULL,
+	Gakoa VARCHAR(30),
+	Telefonoa INT,
+	JaiotzeData VARCHAR(10),
+	Email VARCHAR(50),
+	PRIMARY KEY (NAN)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- auto batzuk sarzeko datu basean

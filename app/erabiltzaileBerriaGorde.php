@@ -1,36 +1,45 @@
 <?php
-  	$izenAbizenak = $_POST['izenAbizenak'];  //Bidali dioten "izenAbizenak" aldagaia, aldagai batean gorde
-  	$nan = $_POST['nan'];  //Bidali dioten "nan" aldagaia, aldagai batean gorde
-  	$telefonoa = $_POST['telefonoa'];  //Bidali dioten "telefonoa" aldagaia, aldagai batean gorde
-  	$email = $_POST['email'];  //Bidali dioten "email" aldagaia, aldagai batean gorde
-  	$jaiotzeData = $_POST['jaiotzeData'];  //Bidali dioten "jaiotzeData" aldagaia, aldagai batean gorde
-  	$gakoa = $_POST['gakoa'];  //Bidali dioten "gakoa" aldagaia, aldagai batean gorde
+	$izenAbizenak = isset($_POST['izenAbizenak']) ? $_POST['izenAbizenak'] : ''; //se comprueba si esta vacio
+	$nan = isset($_POST['nan']) ? $_POST['nan'] : '';
+	$telefonoa = isset($_POST['telefonoa']) ? $_POST['telefonoa'] : '';
+	$email = isset($_POST['email']) ? $_POST['email'] : '';
+	$jaiotzeData = isset($_POST['jaiotzeData']) ? $_POST['jaiotzeData'] : '';
+	$gakoa = isset($_POST['gakoa']) ? $_POST['gakoa'] : '';
 
-  	$hostname = "db";
-  	$username = "admin";
-  	$password = "test";
-  	$db = "database";
-
-  	$conn = mysqli_connect($hostname, $username, $password, $db);  //Datu basearekin konektatu
-  	if ($conn->connect_error) {  //Konexioa ondo egin den konprobatu
-    		die("Database connection failed: " . $conn->connect_error);
-  	}
-  	mysqli_set_charset($conn, "utf8mb4");
-  	
-  	$sql="INSERT INTO ERABILTZAILEA VALUES (?,?,?,?,?,?)";
-	$stmt=$conn->prepare($sql);
-	if($stmt){
-		$stmt->bind_param("sssiss",$izenAbizenak, $nan,$gakoa,$telefonoa,$jaiotzeData,$email);
-		$stmt->execute();
-		
-		$result = $stmt->get_result();
-		
-		$stmt->close();
+	if(empty($izenAbizenak) || empty($nan) || empty($telefonoa) || empty($email) || empty($jaiotzeData) || empty($gakoa)) {
+		die("Error: Todos los campos deben ser completados.");
 	}
-    	
-    	mysqli_close($conn);	//Datu basearekin konexioa itxi 
 
-	header("Location: index.html");	//index.html-ra joan
+	$hostname = "db";
+	$username = "admin";
+	$password = "test";
+	$db = "database";
+
+	$conn = new mysqli($hostname, $username, $password, $db);
+	$conn->set_charset("utf8mb4");
 	
+	if ($conn->connect_error) {
+		die("Error de conexión a la base de datos.");
+	}
+
+	mysqli_set_charset($conn, "utf8mb4");
+
+	$sql = "INSERT INTO ERABILTZAILEA VALUES (?,?,?,?,?,?)"; 
+	$stmt = $conn->prepare($sql); //se prepara la consulta parametrizada
+
+	if ($stmt) {
+		$stmt->bind_param("sssiss", $izenAbizenak, $nan, $gakoa, $telefonoa, $jaiotzeData, $email); // se introducen los parametros en la consulta
+	    	if ($stmt->execute()) {
+			$stmt->close();
+	    	}else {
+			die("Error en la ejecución de la consulta." . $conn->error);
+	    	}
+	}else {
+	    	die("Error en la preparación de la consulta.");
+	}
+
+	$conn->close();
+
+	header("Location: index.html");
 	exit;
 ?>
