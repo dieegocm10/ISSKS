@@ -10,7 +10,6 @@
 	$telefonoa = $_POST['telefonoa'];  //Bidali dioten "telefonoa" aldagaia, aldagai batean gorde
 	$email = $_POST['email'];  //Bidali dioten "email" aldagaia, aldagai batean gorde
 	$jaiotzeData = $_POST['jaiotzeData'];  //Bidali dioten "jaiotzeData" aldagaia, aldagai batean gorde
-	$gakoa = $_POST['gakoa'];  //Bidali dioten "gakoa" aldagaia, aldagai batean gorde
 	$lehenNan = $_SESSION['NAN'];  //Bidali dioten "NAN" aldagaia, aldagai batean gorde
 	  
 	$conn = mysqli_connect($hostname, $username, $password, $db);  //Datu basearekin konektatu
@@ -20,7 +19,6 @@
 	$query1 = mysqli_query($conn, "UPDATE ERABILTZAILEA 
 		                      SET IzenAbizenak = '$izenAbizenak',
 		                          NAN = '$nan',
-		                          Gakoa = '$gakoa',
 		                          Telefonoa = '$telefonoa',
 		                          JaiotzeData = '$jaiotzeData',
 		                          Email = '$email'

@@ -25,7 +25,6 @@
 	$tlf = $row["Telefonoa"];
 	$jaiotzeData = $row["JaiotzeData"];
 	$email = $row["Email"];
-	$gakoa = $row["Gakoa"];
 	$lehenNan = $nan;
 ?>
 <!DOCTYPE html>
@@ -75,12 +74,9 @@
 							        <td><input type="text" name="email" value="<?php echo $email; ?>"></td>
 							</tr>
 							<tr>
-							        <td>GAKOA:</td>
-							        <td><input type="text" name="gakoa" value="<?php echo $gakoa; ?>"></td>
-							</tr>
-							<tr>
 							        <td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=<?php echo $lehenNan; ?>" id="gorde" name="gorde" value="GORDE" class="button"></p></td>
-							        <td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="ERABILTZAILEA EZABATU" onclick="confirmEzabatu()" class="button"></p></td>
+							        <td><p align="center"><input type="button" id="ezabatu" name="ezabatu" value="ERABILTZAILEA EZABATU" onclick="confirmEzabatu()" class="button"></p></td>
+							        <td><p align="left"><a href="pasahitzaAldatu.html"><input type="button" name="pasahitzaAldatu" value="PASAHITZA ALDATU" class="button"></a></p></td>
 							</tr>
 				    		</table>
 					</form>
