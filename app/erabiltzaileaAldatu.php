@@ -26,9 +26,7 @@
 	  	or die (mysqli_error($conn));  //Saiatu datu basean "lehenNAN" oinarri bezala erabiliz,erabiltzailearen atributuak eguneratzea
 
 
-
-	header("Location: index.html");  //index.html-ra joan
-	  
 	mysqli_close($conn);  //Datu basearekin konexioa itxi eta irten
+	header("Location: index.html");  //index.html-ra joan
 	exit;
 ?>

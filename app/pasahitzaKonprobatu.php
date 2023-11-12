@@ -25,28 +25,22 @@
             $row = $result->fetch_assoc();
             $storedPassword = $row['HashedPassword'];
             $salt = $row['Gatza'];
-	    echo $salt;
-	    echo "             ";
-	    echo $storedPassword;
-	    
+
 	    $passwordWithSalt = $gakoa . $salt; // Concatenar la contraseña con la sal
-	    $hashedPassword = password_hash($passwordWithSalt, PASSWORD_BCRYPT); // Aplicar la función de hash usando Bcrypt
-		echo "hashed: ";	
-		echo $hashedPassword;
 		
-            if ($hashedPasswordInput === $storedPassword) {
+            if (password_verify($passwordWithSalt, $storedPassword)) {
                 $_SESSION['NAN'] = $NAN;
                 header("Location: menu.php");
             } else {
-               // showError();
+            	showError();
             }
         } else {
-            //showError();
+        	showError();
         }
 
         $stmt->close();
     } else {
-        //showError();
+    	showError();
     }
 
     mysqli_close($conn);
