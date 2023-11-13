@@ -54,6 +54,12 @@ INSERT INTO AUTOA VALUES('Citroen', 25, '5678 DEF', 'Gasolina', 'Jumper furgon')
 INSERT INTO AUTOA VALUES('Cupra', 17, '9876 GHI', 'Diesel', 'Cupra Ateca');
 INSERT INTO AUTOA VALUES('Audi', 23, '5432 JKL', 'Diesel', 'Audi A4');
 
+-- Asignar privilegios al usuario ISSKS desde cualquier host
+GRANT ALL PRIVILEGES ON `database`.* TO 'ISSKS'@'%' IDENTIFIED BY 'LANA2';
+
+-- Actualizar los privilegios
+FLUSH PRIVILEGES;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
