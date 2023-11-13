@@ -1,6 +1,7 @@
 <?php
 
 header("X-Frame-Options: DENY");
+ini_set('session.cookie_httponly', 1); // Configurar la sesión con la bandera HttpOnly
 
 session_start();
 
