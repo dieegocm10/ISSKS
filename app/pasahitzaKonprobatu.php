@@ -44,10 +44,20 @@ if ($result->num_rows == 1) {
         header("Location: menu.php");
         exit();
     } else {
+    	$data = date('Y-m-d H:i:s');
+    	$ip = ($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 0;
+    	$message = "$data --> IP : $ip NAN : $NAN eta gakoa: $gakoa erabiliz web sisteman sartzeko saiakera bat egon da" . PHP_EOL;
+    	$path = "/var/www/html/log/WebSistema.log";
+	$result = (file_put_contents($path, $message, FILE_APPEND)) ? 1 : 0;
         showError("NAN edo pasahitza txarto sartu dituzu!!");
     }
 } else {
-    showError("NAN edo pasahitza txarto sartu dituzu!!");
+	$data = date('Y-m-d H:i:s');
+    	$ip = ($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 0;
+    	$message = "$data --> IP : $ip NAN : $NAN eta gakoa: $gakoa erabiliz web sisteman sartzeko saiakera bat egon da" . PHP_EOL;
+    	$path = "/var/www/html/log/WebSistema.log";
+	$result = (file_put_contents($path, $message, FILE_APPEND)) ? 1 : 0;
+        showError("NAN edo pasahitza txarto sartu dituzu!!");
 }
 
 $stmt->close();
