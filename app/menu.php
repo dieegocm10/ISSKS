@@ -24,7 +24,7 @@
 		</html>
 <?php
 	} else {
-		echo "404";
+		echo('<img class="image" src="irudiak/404.png" width="200" height="150">');
 	}
 ?>
 
