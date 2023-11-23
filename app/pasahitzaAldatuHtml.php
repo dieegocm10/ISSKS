@@ -1,3 +1,7 @@
+<?php
+	if (isset($_SESSION['NAN'])) {
+		$NAN = $_SESSION['NAN'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -47,3 +51,9 @@
 	</body>
 
 </html>
+<?php
+	} else {
+		echo "404";
+	}
+?>
+

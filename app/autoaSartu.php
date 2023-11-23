@@ -1,6 +1,6 @@
 <?php
-$NAN = $_GET['parametro1'];  //Bidali dioten "parametro1" aldagaia, aldagai batean gorde
-$gakoa = $_GET['parametro2'];  //Bidali dioten "parametro2" aldagaia, aldagai batean gorde
+	session_start();
+	if (isset($_SESSION['NAN'])) {
 ?>
 
 
@@ -100,3 +100,8 @@ $gakoa = $_GET['parametro2'];  //Bidali dioten "parametro2" aldagaia, aldagai ba
 		</script>
 	</body>
 </html>
+<?php
+	} else {
+		echo "404";
+	}
+?>

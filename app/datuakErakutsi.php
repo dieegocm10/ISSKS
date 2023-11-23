@@ -1,19 +1,21 @@
 <?php
-	$hostname = "db";
-	$username = "ISSKS";
-	$password = "LANA2";
-	$db = "database";
+	session_start();
+	if (isset($_SESSION['NAN'])) {
+		$hostname = "db";
+		$username = "ISSKS";
+		$password = "LANA2";
+		$db = "database";
 
-	$NAN = $_GET['parametro1'];	//Bidali dioten "parametro1" aldagaia, aldagai batean gorde
-	$gakoa = $_GET['parametro2'];	//Bidali dioten "parametro2" aldagaia, aldagai batean gorde
+		$NAN = $_GET['parametro1'];	//Bidali dioten "parametro1" aldagaia, aldagai batean gorde
+		$gakoa = $_GET['parametro2'];	//Bidali dioten "parametro2" aldagaia, aldagai batean gorde
 
-	$conn = mysqli_connect($hostname, $username, $password, $db);  //Datu basearekin konektatu
-	if ($conn->connect_error) {  //Konexioa ondo egin den konprobatu
-	    	die("Database connection failed: " . $conn->connect_error);
-	}
+		$conn = mysqli_connect($hostname, $username, $password, $db);  //Datu basearekin konektatu
+		if ($conn->connect_error) {  //Konexioa ondo egin den konprobatu
+		    	die("Database connection failed: " . $conn->connect_error);
+		}
 
-	$query = mysqli_query($conn, "SELECT * FROM AUTOA")
-	    	or die(mysqli_error($conn));	//Saiatu auto guztien informazio guztia lortzea
+		$query = mysqli_query($conn, "SELECT * FROM AUTOA")
+		    	or die(mysqli_error($conn));	//Saiatu auto guztien informazio guztia lortzea
 ?>
 
 <!DOCTYPE html>
@@ -62,5 +64,8 @@
 </html>
 
 <?php
-mysqli_close($conn);	//Konexioa itxi
+		mysqli_close($conn);	//Konexioa itxi
+	} else {
+		echo "404";
+	}
 ?>

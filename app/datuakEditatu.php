@@ -1,31 +1,32 @@
 <?php
 	session_start();
-	$hostname = "db";
-	$username = "ISSKS";
-	$password = "LANA2";
-	$db = "database";
+	if (isset($_SESSION['NAN'])) {
+		$hostname = "db";
+		$username = "ISSKS";
+		$password = "LANA2";
+		$db = "database";
 
-	$NAN = $_SESSION['NAN'];
+		$NAN = $_SESSION['NAN'];
 
-	$conn = mysqli_connect($hostname, $username, $password, $db);
+		$conn = mysqli_connect($hostname, $username, $password, $db);
 
-	if ($conn->connect_error) {
-	    die("Database connection failed: " . $conn->connect_error);
-	}
+		if ($conn->connect_error) {
+		    die("Database connection failed: " . $conn->connect_error);
+		}
 
-	$query1 = mysqli_query($conn, "SELECT * FROM ERABILTZAILEA WHERE NAN = '$NAN'")
-	    or die(mysqli_error($conn));
+		$query1 = mysqli_query($conn, "SELECT * FROM ERABILTZAILEA WHERE NAN = '$NAN'")
+		    or die(mysqli_error($conn));
 
-	$row = mysqli_fetch_array($query1);
+		$row = mysqli_fetch_array($query1);
 
-	mysqli_close($conn);
+		mysqli_close($conn);
 
-	$izenAbizenak = $row["IzenAbizenak"];
-	$nan = $row["NAN"];
-	$tlf = $row["Telefonoa"];
-	$jaiotzeData = $row["JaiotzeData"];
-	$email = $row["Email"];
-	$lehenNan = $nan;
+		$izenAbizenak = $row["IzenAbizenak"];
+		$nan = $row["NAN"];
+		$tlf = $row["Telefonoa"];
+		$jaiotzeData = $row["JaiotzeData"];
+		$email = $row["Email"];
+		$lehenNan = $nan;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -122,4 +123,8 @@
 	</body>
 
 </html>
-
+<?php
+	} else {
+		echo "404";
+	}
+?>

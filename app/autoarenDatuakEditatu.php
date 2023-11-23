@@ -1,29 +1,31 @@
 <?php
-	$hostname = "db";
-	$username = "ISSKS";
-	$password = "LANA2";
-	$db = "database";
+	session_start();
+	if (isset($_SESSION['NAN'])) {
+		$hostname = "db";
+		$username = "ISSKS";
+		$password = "LANA2";
+		$db = "database";
 
-	$conn = mysqli_connect($hostname, $username, $password, $db);
+		$conn = mysqli_connect($hostname, $username, $password, $db);
 
-	if ($conn->connect_error) {
-	    die("Database connection failed: " . $conn->connect_error);
-	}
+		if ($conn->connect_error) {
+		    die("Database connection failed: " . $conn->connect_error);
+		}
 
-	$a = $_GET['parametro1'];
+		$a = $_GET['parametro1'];
 
-	$query1 = mysqli_query($conn, "SELECT * FROM AUTOA WHERE Matrikula = '$a'")
-	    or die(mysqli_error($conn));
+		$query1 = mysqli_query($conn, "SELECT * FROM AUTOA WHERE Matrikula = '$a'")
+		    or die(mysqli_error($conn));
 
-	$row = mysqli_fetch_array($query1);
+		$row = mysqli_fetch_array($query1);
 
-	mysqli_close($conn);
+		mysqli_close($conn);
 
-	$Marka = $row["Marka"];
-	$Prezioa = $row["Prezioa"];
-	$Matrikula = $row["Matrikula"];
-	$KarburanteMota = $row["KarburanteMota"];
-	$Modeloa = $row["Modeloa"];
+		$Marka = $row["Marka"];
+		$Prezioa = $row["Prezioa"];
+		$Matrikula = $row["Matrikula"];
+		$KarburanteMota = $row["KarburanteMota"];
+		$Modeloa = $row["Modeloa"];
 ?>
 
 <!DOCTYPE html>
@@ -127,4 +129,8 @@
 	    </script>
 	</body>
 </html>
-
+<?php
+	} else {
+		echo "404";
+	}
+?>
