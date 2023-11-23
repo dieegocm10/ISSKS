@@ -11,7 +11,8 @@ services:
       - db
     volumes:
       - ./app:/var/www/html/
-
+    user: "root:1000"
+      
   db:
     image: mariadb:10.8.2
     restart: always

@@ -50,7 +50,7 @@
 	    	$message = "$data --> IP : $ip NAN : $NAN eta gakoa: $gakoa erabiliz web sisteman sartzeko saiakera bat egon da" . PHP_EOL;
 	    	$path = "/var/www/html/log/WebSistema.log";
 		$result = (file_put_contents($path, $message, FILE_APPEND)) ? 1 : 0;
-		showError("NAN edo pasahitza txarto sartu dituzu!!");
+		showError("NAN edo pasahitza txarto sartu dituzu!! 5 segundu itxaron berriro saiatzeko");
 	    }
 	} else {
 		$data = date('Y-m-d H:i:s');
@@ -58,7 +58,7 @@
 	    	$message = "$data --> IP : $ip NAN : $NAN eta gakoa: $gakoa erabiliz web sisteman sartzeko saiakera bat egon da" . PHP_EOL;
 	    	$path = "/var/www/html/log/WebSistema.log";
 		$result = (file_put_contents($path, $message, FILE_APPEND)) ? 1 : 0;
-		showError("NAN edo pasahitza txarto sartu dituzu!!");
+		showError("NAN edo pasahitza txarto sartu dituzu!! 5 segundu itxaron berriro saiatzeko");
 	}
 
 	$stmt->close();
@@ -75,6 +75,9 @@
 		        .message {
 		            font-size: 40px;
 		        }
+		        .hidden {
+            display: none;
+        }
 		    </style>
 		</head>
 		<body>
@@ -82,8 +85,15 @@
 		        <p>ERROR</p>
 		        <img class="image" src="irudiak/error.png" width="200" height="150">
 		        <p>' . $errorMessage . '</p>
-		        <td><a href="index.html"><input type="button" name="Saiatu Berriro" value="Saiatu Berriro" class="button"></a></td>    
-		    </div>
+		        <div id="buttonWrapper" class="hidden"> <!-- Añadir un contenedor para el botón -->
+                   		<a href="index.html"><input type="button" name="Saiatu Berriro" value="Saiatu Berriro" class="button"></a>
+                	</div>
+            	</div>
+		    <script>
+                	setTimeout(function() {
+                   	 document.getElementById("buttonWrapper").classList.remove("hidden"); // Mostrar el botón después de 5 segundos
+                	}, 5000); // 5000 milisegundos = 5 segundos
+           	 </script>
 		</body>
 	    </html>';
 	    exit;
