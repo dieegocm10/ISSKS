@@ -21,6 +21,6 @@
 		  mysqli_close($conn);  //Datu basearekin konexioa itxi eta irten
 		  exit;
 	} else {
-		echo "404";
+		echo('<img class="image" id="404" src="irudiak/404.jpg" width="100%" height="100%" style="margin: 0 auto;">');
 	}
 ?>

@@ -76,8 +76,8 @@
 		            font-size: 40px;
 		        }
 		        .hidden {
-            display: none;
-        }
+			    display: none;
+			}
 		    </style>
 		</head>
 		<body>

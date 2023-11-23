@@ -24,7 +24,7 @@
 		</html>
 <?php
 	} else {
-		echo('<img class="image" src="irudiak/404.png" width="200" height="150">');
+		echo('<img class="image" id="404" src="irudiak/404.jpg" width="100%" height="100%" style="margin: 0 auto;">');
 	}
 ?>
 

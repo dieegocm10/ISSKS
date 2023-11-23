@@ -22,6 +22,6 @@
 	    	
 	    	header("Location: datuakErakutsi.php");  //datakErakutsi.php-ra joan
 	} else {
-		echo "404";
+		echo('<img class="image" id="404" src="irudiak/404.jpg" width="100%" height="100%" style="margin: 0 auto;">');
 	}
 ?>
