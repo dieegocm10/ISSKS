@@ -1,7 +1,4 @@
 <?php
-	ini_set('session.cookie_httponly', 1); // Configurar la sesión con la bandera HttpOnly
-	ini_set('session.cookie_secure', 1); 
-
 	session_start();
 
 	$hostname = "db";
