@@ -21,20 +21,18 @@ RUN a2enmod headers
 
 # Reinicia Apache para aplicar los cambios
 RUN service apache2 restart
-# Crea el archivo intentos_login.txt
-RUN touch /var/www/html/WebSitema.log
 
 # Cambia el propietario y los permisos del directorio de trabajo
-RUN chown -R www-data:www-data /var/www/html 
+#RUN chown -R www-data:www-data /var/www/html 
 
-RUN chmod -R 777 /var/www/html
+#RUN chmod -R 777 /var/www/html
 
 # Establece el directorio de trabajo
 WORKDIR /var/www/html
 
 # Expone el puerto 80 para el servidor web Apache
-EXPOSE 80
+#EXPOSE 80
 
 # Comando de inicio del contenedor (puedes ajustar esto según tus necesidades)
-CMD ["apache2-foreground"]
+#CMD ["apache2-foreground"]
 
