@@ -22,8 +22,8 @@ RUN chmod -R 777 /var/www/html
 WORKDIR /var/www/html
 
 # Expone el puerto 80 para el servidor web Apache
-#EXPOSE 80
+EXPOSE 80
 
 # Comando de inicio del contenedor (puedes ajustar esto según tus necesidades)
-#CMD ["apache2-foreground"]
+CMD ["apache2-foreground"]
 
