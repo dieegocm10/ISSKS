@@ -10,6 +10,17 @@ RUN docker-php-ext-install mysqli
 # Copia los archivos de la aplicación al directorio de trabajo del contenedor
 COPY . /var/www/html
 
+# Copia el archivo de configuración personalizado
+COPY myapache.conf /etc/apache2/sites-available/myapache.conf
+
+# Habilita el sitio con la configuración personalizada
+RUN ln -s /etc/apache2/sites-available/myapache.conf /etc/apache2/sites-enabled/
+
+# Habilita los módulos necesarios
+RUN a2enmod headers
+
+# Reinicia Apache para aplicar los cambios
+RUN service apache2 restart
 # Crea el archivo intentos_login.txt
 RUN touch /var/www/html/WebSitema.log
 
