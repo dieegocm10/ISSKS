@@ -45,26 +45,16 @@
 		header("Location: menu.php");
 		exit();
 	    } else {
-	    	$data = date('Y-m-d H:i:s');
-	    	$ip = ($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 0;
-	    	$message = "$data --> IP : $ip NAN : $NAN eta gakoa: $gakoa erabiliz web sisteman sartzeko saiakera bat egon da" . PHP_EOL;
-	    	$path = "/var/www/html/log/WebSistema.log";
-		$result = (file_put_contents($path, $message, FILE_APPEND)) ? 1 : 0;
-		showError("NAN edo pasahitza txarto sartu dituzu!! 5 segundu itxaron berriro saiatzeko");
+	    	registrarIntentoIncorrecto($NAN);
 	    }
 	} else {
-		$data = date('Y-m-d H:i:s');
-	    	$ip = ($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 0;
-	    	$message = "$data --> IP : $ip NAN : $NAN eta gakoa: $gakoa erabiliz web sisteman sartzeko saiakera bat egon da" . PHP_EOL;
-	    	$path = "/var/www/html/log/WebSistema.log";
-		$result = (file_put_contents($path, $message, FILE_APPEND)) ? 1 : 0;
-		showError("NAN edo pasahitza txarto sartu dituzu!! 5 segundu itxaron berriro saiatzeko");
+		registrarIntentoIncorrecto($NAN);
 	}
 
 	$stmt->close();
 	mysqli_close($conn);
 
-	function showError($errorMessage) {
+	function showError() {
 	    echo '<html>
 		<head>
 		    <title>Mezua</title>
@@ -84,7 +74,7 @@
 		    <div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 		        <p>ERROR</p>
 		        <img class="image" src="irudiak/error.png" width="200" height="150">
-		        <p>' . $errorMessage . '</p>
+		        <p>NAN edo pasahitza txarto sartu dituzu!! 5 segundu itxaron berriro saiatzeko</p>
 		        <div id="buttonWrapper" class="hidden"> <!-- Añadir un contenedor para el botón -->
                    		<a href="index.html"><input type="button" name="Saiatu Berriro" value="Saiatu Berriro" class="button"></a>
                 	</div>
@@ -98,7 +88,14 @@
 	    </html>';
 	    exit;
 	}
+	function registrarIntentoIncorrecto($usuario) {
+    		$archivoLog = 'log/WebSistema.log';
+		$archivo = fopen($archivoLog, 'a');
+		$fechaHora = date('Y-m-d H:i:s');
+		$ip = ($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 0;
+		$mensajeLog = "[ERROR] $fechaHora --> IP : $ip - NAN : $usuario erabiliz web sisteman sartzeko saiakera bat egon da" . PHP_EOL; 
+		fwrite($archivo, $mensajeLog);
+		fclose($archivo);
+		showError();
+	}
 ?>
-
-
-
