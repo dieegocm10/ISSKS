@@ -1,7 +1,4 @@
 <?php
-	header('X-Frame-Options: DENY');
-
-
 	$izenAbizenak = isset($_POST['izenAbizenak']) ? $_POST['izenAbizenak'] : ''; //se comprueba si esta vacio
 	$nan = isset($_POST['nan']) ? $_POST['nan'] : '';
 	$telefonoa = isset($_POST['telefonoa']) ? $_POST['telefonoa'] : '';

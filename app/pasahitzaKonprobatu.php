@@ -1,6 +1,4 @@
 <?php
-
-	header("X-Frame-Options: DENY");
 	ini_set('session.cookie_httponly', 1); // Configurar la sesión con la bandera HttpOnly
 	ini_set('session.cookie_secure', 1); 
 
@@ -89,7 +87,7 @@
 	    exit;
 	}
 	function registrarIntentoIncorrecto($usuario) {
-    		$archivoLog = 'log/WebSistema.log';
+    		$archivoLog = 'WebSistema.log';
 		$archivo = fopen($archivoLog, 'a');
 		$fechaHora = date('Y-m-d H:i:s');
 		$ip = ($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 0;

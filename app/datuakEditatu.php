@@ -77,7 +77,7 @@
 							<tr>
 							        <td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=<?php echo $lehenNan; ?>" id="gorde" name="gorde" value="GORDE" class="button"></p></td>
 							        <td><p align="center"><input type="button" id="ezabatu" name="ezabatu" value="ERABILTZAILEA EZABATU" onclick="confirmEzabatu()" class="button"></p></td>
-							        <td><p align="left"><a href="pasahitzaAldatu.html"><input type="button" name="pasahitzaAldatu" value="PASAHITZA ALDATU" class="button"></a></p></td>
+							        <td><p align="left"><a href="pasahitzaAldatuHtml.php"><input type="button" name="pasahitzaAldatu" value="PASAHITZA ALDATU" class="button"></a></p></td>
 							</tr>
 				    		</table>
 					</form>
