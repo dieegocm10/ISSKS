@@ -8,26 +8,41 @@
 	}
 	$_SESSION['last_activity'] = time(); 	// Actualizar el tiempo de actividad de la sesión
 	if (isset($_SESSION['NAN'])) {
-	  	$marka = $_POST['marka'];  //Bidali dioten "marka" aldagaia, aldagai batean gorde
-	  	$prezioa = $_POST['prezioa'];  //Bidali dioten "prezioa" aldagaia, aldagai batean gorde
-	  	$matrikula = $_POST['matrikula'];  //Bidali dioten "matrikula" aldagaia, aldagai batean gorde
-	  	$karburanteMota = $_POST['karburanteMota'];  //Bidali dioten "karburanteMota" aldagaia, aldagai batean gorde
-	  	$modeloa = $_POST['modeloa'];  //Bidali dioten "modeloa" aldagaia, aldagai batean gorde
+	  	$marka = $_POST['marka'];
+	  	$prezioa = $_POST['prezioa'];
+	  	$matrikula = $_POST['matrikula'];
+	  	$karburanteMota = $_POST['karburanteMota'];
+	  	$modeloa = $_POST['modeloa'];
 
 	  	$hostname = "db";
 	  	$username = "ISSKS";
 		$password = "LANA2";
 	  	$db = "database";
 
-	  	$conn = mysqli_connect($hostname, $username, $password, $db);  //Datu basearekin konektatu
+	  	$conn = new mysqli($hostname, $username, $password, $db);  //Datu basearekin konektatu
 	  	if ($conn->connect_error) {  //Konexioa ondo egin den konprobatu
 	    		die("Database connection failed: " . $conn->connect_error);
 	  	}
 
-	  	$query = mysqli_query($conn, "INSERT INTO AUTOA VALUES ('$marka', '$prezioa', '$matrikula', '$karburanteMota', '$modeloa')")
-	    	or die (mysqli_error($conn));  //Saiatu datu basean auto berri bat sartzea
-	    	
-	    	header("Location: datuakErakutsi.php");  //datakErakutsi.php-ra joan
+	  	// Utilizar una consulta preparada
+	  	$query = $conn->prepare("INSERT INTO AUTOA VALUES (?, ?, ?, ?, ?)");
+		
+		// Vincular parámetros
+	  	$query->bind_param("sssss", $marka, $prezioa, $matrikula, $karburanteMota, $modeloa);
+
+		// Ejecutar la consulta
+	  	$result = $query->execute();
+
+		// Comprobar si la consulta se ejecutó con éxito
+	  	if ($result) {
+	    	header("Location: datuakErakutsi.php");
+	  	} else {
+	    	echo "Error en la ejecución de la consulta: " . $conn->error;
+	  	}
+
+		// Cerrar la conexión
+	  	$query->close();
+	  	$conn->close();
 	} else {
 		echo('<img class="image" id="404" src="irudiak/404.jpg" width="100%" height="100%" style="margin: 0 auto;">');
 	}
