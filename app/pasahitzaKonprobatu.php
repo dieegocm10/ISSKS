@@ -99,7 +99,7 @@
 	}
 	
 	function registrarIntentoIncorrecto($usuario) {
-    		$archivoLog = '/log/WebSistema.log';
+    		$archivoLog = '/var/www/html/log/WebSistema.log';
 		$archivo = fopen($archivoLog, 'a');
 		$fechaHora = date('Y-m-d H:i:s');
 		$ip = ($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 0;
