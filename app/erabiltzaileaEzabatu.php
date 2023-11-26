@@ -16,7 +16,7 @@
 				              WHERE NAN = '$lehenNan'")
 		  	or die (mysqli_error($conn));  //Saiatu datu basean "lehenNAN" oinarri bezala erabiliz, erabiltzailea ezabatzen
 
-		header("Location: index.html");  //index.html-ra joan  
+		header("Location: index.php");  //index.html-ra joan  
 		mysqli_close($conn);  //Datu basearekin konexioa itxi eta irten
 		exit;
 	} else {

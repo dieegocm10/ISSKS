@@ -1,3 +1,11 @@
+<?php
+	session_start();
+
+	// Generar token CSRF y guardarlo en la sesión
+	if (!isset($_SESSION['csrf_token'])) {
+	    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,9 +28,10 @@
 		        		</tr>
 		        		<tr>
 		            			<td><input type="submit" name="sartu" value="Sartu" class="button"></td>		<!- SARTU botoia ipintza !>
-		            			<td><a href="erabiltzaileBerriaGorde.html"><input type="button" name="erregistratu" value="Erregistratu" class="button"></a></td>		<!- ERREGISTRATU botoia ipintza,klikatzerakoan erabiltzaileBerriaGorde.html-ra joan !>
+		            			<td><a href="erabiltzaileBerriaGordeHtml.php"><input type="button" name="erregistratu" value="Erregistratu" class="button"></a></td>		<!- ERREGISTRATU botoia ipintza,klikatzerakoan erabiltzaileBerriaGorde.html-ra joan !>
 		        		</tr>
 		    		</table>
+		    		 <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 			</form>
 	    	</div>
 	</body>

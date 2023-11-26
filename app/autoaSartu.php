@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
+		<a href="index.php"><input type="button" name="HOME" value="HOME" class="button"></a>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
 		<a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a>	<!- MENU botoia ipintzea, klikatzerakoan menu.php-ra joan !>
 		<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 	    		<div class="container">

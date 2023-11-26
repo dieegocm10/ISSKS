@@ -10,7 +10,7 @@
 			    	<link rel="stylesheet" href="css/menu.css">
 			</head>
 			<body>
-				<a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a>		<!-- HOME botoia ipintzea, klikatzerakoan index.html-ra joan -->
+				<a href="index.php"><input type="button" name="HOME" value="HOME" class="button"></a>		<!-- HOME botoia ipintzea, klikatzerakoan index.html-ra joan -->
 			    	<div class="container">
 					<div class="comment">Hauetako bat hautatu:</div>
 					<img class="image" src="irudiak/4.jpg" width="400" height="350" alt="Imagen de muestra">

@@ -1,3 +1,12 @@
+<?php
+	session_start();
+
+	// Generar token CSRF y guardarlo en la sesión
+	if (!isset($_SESSION['csrf_token'])) {
+	    $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+	}
+?>
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Denda</title>	<!- Izenburuan "Denda" ipini !>
@@ -6,39 +15,42 @@
 	
 	<body>
 		
-		<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button" align="center"></a></td>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
+		<td><a href="index.php"><input type="button" name="HOME" value="HOME" class="button" align="center"></a></td>		<!- HOME botoia ipintzea, klikatzerakoan index.html-ra joan !>
 		<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 			<img src="irudiak/ESTE.gif" width="450" height="250">
-			<form  method="POST" action="erabiltzaileBerriaGorde.php" onsubmit="return erabiltzaileaGorde()" accept-charset="UTF-8"><table>		<!- erabiltzaileBerriaGorde.php-rq joan !>
-				<tr>
-					<td>IZEN ABIZENAK:</td>	<!-Zure izen-abizen sartzeko tokia!>
-					<td><input type="text" name="izenAbizenak" id="izenAbizenak"></td>
-				</tr>
-				<tr>
-					<td>NAN:</td>	<!-Zure NAN sartzeko tokia!>
-					<td><input type="text" name="nan"  placeholder="11111111Z" ></td>
-				</tr>
-				<tr>
-					<td>TELEFONOA:</td>	<!-Zure telefonoa sartzeko tokia!>
-					<td><input type="number" name="telefonoa"  placeholder="666666666" ></td>
-				</tr>
-				<tr>
-					<td>JAIOTZE DATA:</td>	<!-Zure jaiotze data sartzeko tokia!>
-					<td><input type="date" name="jaiotzeData" placeholder="ee/hh/uuuu" ></td>
-				</tr>
-				<tr>
-					<td>EMAIL:</td>	<!-Zure email sartzeko tokia!>
-					<td><input type="text" name="email" placeholder="adibidea@zerbitzaria.extentsioa"></td>
-				</tr>
-				<tr>
-					<td>GAKOA:</td>	<!-Zure gako sartzeko tokia!>
-					<td><input type="text" name="gakoa" ></td>
-				</tr>
-				<tr>
-					<td><p align="right"><input type="submit" id="gorde"name="gorde" value="GORDE" class="button"></p></td>		<!- GORDE botoia ipintzea !>
-					<td><p align="left"><input type="button" id="garbitu"name="garbitu" value="GARBITU" class="button"></p></td>	<!- GARBITU botoia ipintzea !>
-				</tr>
-			</table>
+			<form  method="POST" action="erabiltzaileBerriaGorde.php" onsubmit="return erabiltzaileaGorde()" accept-charset="UTF-8">		<!- erabiltzaileBerriaGorde.php-rq joan !>
+				<table>
+					<tr>
+						<td>IZEN ABIZENAK:</td>	<!-Zure izen-abizen sartzeko tokia!>
+						<td><input type="text" name="izenAbizenak" id="izenAbizenak"></td>
+					</tr>
+					<tr>
+						<td>NAN:</td>	<!-Zure NAN sartzeko tokia!>
+						<td><input type="text" name="nan"  placeholder="11111111Z" ></td>
+					</tr>
+					<tr>
+						<td>TELEFONOA:</td>	<!-Zure telefonoa sartzeko tokia!>
+						<td><input type="number" name="telefonoa"  placeholder="666666666" ></td>
+					</tr>
+					<tr>
+						<td>JAIOTZE DATA:</td>	<!-Zure jaiotze data sartzeko tokia!>
+						<td><input type="date" name="jaiotzeData" placeholder="ee/hh/uuuu" ></td>
+					</tr>
+					<tr>
+						<td>EMAIL:</td>	<!-Zure email sartzeko tokia!>
+						<td><input type="text" name="email" placeholder="adibidea@zerbitzaria.extentsioa"></td>
+					</tr>
+					<tr>
+						<td>GAKOA:</td>	<!-Zure gako sartzeko tokia!>
+						<td><input type="text" name="gakoa" ></td>
+					</tr>
+					<tr>
+						<td><p align="right"><input type="submit" id="gorde"name="gorde" value="GORDE" class="button"></p></td>		<!- GORDE botoia ipintzea !>
+						<td><p align="left"><input type="button" id="garbitu"name="garbitu" value="GARBITU" class="button"></p></td>	<!- GARBITU botoia ipintzea !>
+					</tr>
+				</table>
+				<input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
+			</form>
 		</div>
 		<script>
 			document.addEventListener("DOMContentLoaded", function() {

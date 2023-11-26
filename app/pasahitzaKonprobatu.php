@@ -1,53 +1,57 @@
 <?php
 	session_start();
+	if (isset($_POST['csrf_token']) && $_POST['csrf_token'] === $_SESSION['csrf_token']) {
+		$hostname = "db";
+		$username = "ISSKS";
+		$password = "LANA2";
+		$db = "database";
 
-	$hostname = "db";
-	$username = "ISSKS";
-	$password = "LANA2";
-	$db = "database";
+		$NAN = $_POST['NAN'];
+		$gakoa = $_POST['gakoa'];
 
-	$NAN = $_POST['NAN'];
-	$gakoa = $_POST['gakoa'];
+		$conn = mysqli_connect($hostname, $username, $password, $db);
+		if (!$conn) {
+		    die("Database connection failed: " . mysqli_connect_error());
+		}
 
-	$conn = mysqli_connect($hostname, $username, $password, $db);
-	if (!$conn) {
-	    die("Database connection failed: " . mysqli_connect_error());
-	}
+		$sql = "SELECT HashedPassword, Gatza FROM ERABILTZAILEA WHERE NAN = ?";
+		$stmt = $conn->prepare($sql);
+		if (!$stmt) {
+		    die("Error preparing statement: " . $conn->error);
+		}
 
-	$sql = "SELECT HashedPassword, Gatza FROM ERABILTZAILEA WHERE NAN = ?";
-	$stmt = $conn->prepare($sql);
-	if (!$stmt) {
-	    die("Error preparing statement: " . $conn->error);
-	}
+		$stmt->bind_param("s", $NAN);
+		$stmt->execute();
 
-	$stmt->bind_param("s", $NAN);
-	$stmt->execute();
+		$result = $stmt->get_result();
+		if (!$result) {
+		    die("Error executing query: " . $stmt->error);
+		}
 
-	$result = $stmt->get_result();
-	if (!$result) {
-	    die("Error executing query: " . $stmt->error);
-	}
+		if ($result->num_rows == 1) {
+		    $row = $result->fetch_assoc();
+		    $storedPassword = $row['HashedPassword'];
+		    $salt = $row['Gatza'];
 
-	if ($result->num_rows == 1) {
-	    $row = $result->fetch_assoc();
-	    $storedPassword = $row['HashedPassword'];
-	    $salt = $row['Gatza'];
+		    $passwordWithSalt = $gakoa . $salt;
 
-	    $passwordWithSalt = $gakoa . $salt;
+		    if (password_verify($passwordWithSalt, $storedPassword)) {
+			$_SESSION['NAN'] = $NAN;
+			header("Location: menu.php");
+			exit();
+		    } else {
+		    	registrarIntentoIncorrecto($NAN);
+		    }
+		} else {
+			registrarIntentoIncorrecto($NAN);
+		}
 
-	    if (password_verify($passwordWithSalt, $storedPassword)) {
-		$_SESSION['NAN'] = $NAN;
-		header("Location: menu.php");
-		exit();
-	    } else {
-	    	registrarIntentoIncorrecto($NAN);
-	    }
+		$stmt->close();
+		mysqli_close($conn);
 	} else {
-		registrarIntentoIncorrecto($NAN);
+	    registrarIntentoIncorrecto("CSRF");
 	}
-
-	$stmt->close();
-	mysqli_close($conn);
+	
 
 	function showError() {
 	    echo '<html>
@@ -71,7 +75,7 @@
 		        <img class="image" src="irudiak/error.png" width="200" height="150">
 		        <p>NAN edo pasahitza txarto sartu dituzu!! 5 segundu itxaron berriro saiatzeko</p>
 		        <div id="buttonWrapper" class="hidden"> <!-- Añadir un contenedor para el botón -->
-                   		<a href="index.html"><input type="button" name="Saiatu Berriro" value="Saiatu Berriro" class="button"></a>
+                   		<a href="index.php"><input type="button" name="Saiatu Berriro" value="Saiatu Berriro" class="button"></a>
                 	</div>
             	</div>
 		    <script>

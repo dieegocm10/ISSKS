@@ -25,7 +25,7 @@
 	    	<link rel="stylesheet" href="css/datuakErakutsi.css">	
 	</head>
 	<body>
-		<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>
+		<td><a href="index.php"><input type="button" name="HOME" value="HOME" class="button"></a></td>
 		<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>	
 		<div align="center" style="position: absolute; top: 60%; left: 50%; transform: translate(-50%, -50%);">
 		    	<div class="container">

@@ -34,7 +34,7 @@
 
 
 		mysqli_close($conn);  //Datu basearekin konexioa itxi eta irten
-		header("Location: index.html");  //index.html-ra joan
+		header("Location: index.php");  //index.html-ra joan
 		exit;
 	} else {
 		echo('<img class="image" id="404" src="irudiak/404.jpg" width="100%" height="100%" style="margin: 0 auto;">');
