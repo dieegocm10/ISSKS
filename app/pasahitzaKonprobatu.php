@@ -1,7 +1,8 @@
 <?php
 	// Iniciar la sesión
 	session_start();
-	if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $sessionLifetime)) {
+	$_SESSION['last_activity'] = time(); 
+	if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $_SESSION['lifeTime'])) {
 	    // La sesión ha expirado, destruirla y redirigir al usuario al inicio de sesión
 	    session_unset();
 	    session_destroy();
