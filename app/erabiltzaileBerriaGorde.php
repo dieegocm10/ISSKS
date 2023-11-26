@@ -1,12 +1,12 @@
 <?php
 	session_start();
 	if (isset($_POST['csrf_token']) && $_POST['csrf_token'] === $_SESSION['csrf_token']) {
-		$izenAbizenak = isset($_POST['izenAbizenak']) ? $_POST['izenAbizenak'] : ''; //se comprueba si esta vacio
-		$nan = isset($_POST['nan']) ? $_POST['nan'] : '';
-		$telefonoa = isset($_POST['telefonoa']) ? $_POST['telefonoa'] : '';
-		$email = isset($_POST['email']) ? $_POST['email'] : '';
-		$jaiotzeData = isset($_POST['jaiotzeData']) ? $_POST['jaiotzeData'] : '';
-		$gakoa = isset($_POST['gakoa']) ? $_POST['gakoa'] : '';
+		$izenAbizenak = filter_var($_POST['izenAbizenak'], FILTER_SANITIZE_STRING);
+		$nan = filter_var($_POST['nan'], FILTER_SANITIZE_STRING);
+		$telefonoa = filter_var($_POST['telefonoa'], FILTER_SANITIZE_STRING);
+		$email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+		$jaiotzeData = filter_var($_POST['jaiotzeData'], FILTER_SANITIZE_STRING);
+		$gakoa = filter_var($_POST['gakoa'], FILTER_SANITIZE_STRING);
 
 		if(empty($izenAbizenak) || empty($nan) || empty($telefonoa) || empty($email) || empty($jaiotzeData) || empty($gakoa)) {
 			die("Error: Todos los campos deben ser completados.");
@@ -17,12 +17,12 @@
 		$passwordWithSalt = $gakoa . $gatza; // Concatenar la contraseña con la sal
 		$hashedPassword = password_hash($passwordWithSalt, PASSWORD_BCRYPT); // Aplicar la función de hash usando Bcrypt
 
-		$hostname = "db";
-		$username = "ISSKS";
-		$password = "LANA2";
-		$db = "database";
+		define('DB_HOST', 'db');
+		define('DB_USER', 'ISSKS');
+		define('DB_PASSWORD', 'LANA2');
+		define('DB_NAME', 'database');
 
-		$conn = new mysqli($hostname, $username, $password, $db);
+    		$conn = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 		$conn->set_charset("utf8mb4");
 		
 		if ($conn->connect_error) {
@@ -44,7 +44,7 @@
 		}else {
 		    	die("Error en la preparación de la consulta.");
 		}
-
+		session_write_close();
 		$conn->close();
 		header("Location: index.php");
 		exit;
