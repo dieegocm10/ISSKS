@@ -75,10 +75,12 @@
 							        <td>EMAIL:</td>
 							        <td><input type="text" name="email" value="<?php echo $email; ?>"></td>
 							</tr>
+							<td>GAKOA:</td>		
+								<td><input type="text" name="gakoa" value="<?php echo $gakoa; ?>"></td>
+							</tr>
 							<tr>
-							        <td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=<?php echo $lehenNan; ?>" id="gorde" name="gorde" value="GORDE" class="button"></p></td>
-							        <td><p align="center"><input type="button" id="ezabatu" name="ezabatu" value="ERABILTZAILEA EZABATU" onclick="confirmEzabatu()" class="button"></p></td>
-							        <td><p align="left"><a href="pasahitzaAldatuHtml.php"><input type="button" name="pasahitzaAldatu" value="PASAHITZA ALDATU" class="button"></a></p></td>
+								<td><p align="right"><input type="submit" formaction="erabiltzaileaAldatu.php?lehenNan=<?php echo $lehenNan; ?>" id="gorde" name="gorde" value="GORDE" class="button"></p></td>	
+								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="ERABILTZAILEA EZABATU" onclick="confirmEzabatu()" class="button"></p></td>	
 							</tr>
 				    		</table>
 					</form>
@@ -91,7 +93,8 @@
 			    	var nan = document.getElementsByName("nan")[0].value; //NAN balioa aldagai batean gorde	
 			    	var telefonoa = document.getElementsByName("telefonoa")[0].value; //Telefono balioa aldagai batean gorde	
 			    	var jaiotzeData = document.getElementsByName("jaiotzeData")[0].value; //Jaiotze dataren balioa aldagai batean gorde	
-			    	var email = document.getElementsByName("email")[0].value; //Email-aren balioa aldagai batean gorde		
+			    	var email = document.getElementsByName("email")[0].value; //Email-aren balioa aldagai batean gorde
+			    	var gakoa = document.getElementsByName("gakoa")[0].value;	//Gakoaren balioa aldagai batean gorde			
 			    	if (izenAbizenak == "") { //Konprobatu IzenAbizenak hutsik badago
 					alert("IZEN ABIZENAK ez dira jarri");
 					return false; //Hutsik badago alerta eman eta false bueltatu
@@ -119,6 +122,10 @@
 				    		return false; //Egokia ez bada alerta eman eta false bueltatu
 					}
 			    	}
+			    	if (gakoa == "") {	//Konprobatu gakoa hutsik badago
+						alert("GAKOA ez da jarri");	//Hutsik badago alerta eman eta false bueltatu
+					  	return false;
+				}
 			}
 		</script>
 	</body>
