@@ -51,7 +51,8 @@ Web Sistemara sartzeko erabiltzaile bat erabili beharko da eta erabiltzaile horr
 -  NAN 11111111Z formatua soilik onartuko du eta letra zenbakiei dagokiola ziurtatuko da.
 -  Telefonoa 9 zenbaki soilik.
 -  Jaiotze data datak ee-hh-uuuu formatuan soilik (Adib. 26/08/2021).
--  Emaila, formatua egokia dutenek soilik (adibidea@zerbitzaria.extentsioa).
+-  Emaila formatua egokia dutenek soilik (adibidea@zerbitzaria.extentsioa).
+-  Gakoa gutxienez 6 karaktere eduki behar ditu. Gutxienez letra larriak, xeheak eta zenbakiak konposatuta egon behar da.
 
 Autoen atributuen formatua hurrengoa izango da:
 -  Marka testua soilik.
@@ -59,3 +60,6 @@ Autoen atributuen formatua hurrengoa izango da:
 -  Matrikula testua solik zzzz LLL formatuan (Adib. 1111 AAA).
 -  Karburante mota testua soilik.
 -  Modeloa testua soilik.
+
+## Instrukzioak
+chmod 777 app/log/WebSistema.log egin behar da.
