@@ -1,5 +1,14 @@
 <?php
+	// Iniciar la sesión
 	session_start();
+	if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $sessionLifetime)) {
+	    // La sesión ha expirado, destruirla y redirigir al usuario al inicio de sesión
+	    session_unset();
+	    session_destroy();
+	    header("Location: index.php");
+	}
+	$_SESSION['last_activity'] = time(); 	// Actualizar el tiempo de actividad de la sesión
+
 	if (isset($_POST['csrf_token']) && $_POST['csrf_token'] === $_SESSION['csrf_token']) {
 		$hostname = "db";
 		$username = "ISSKS";
@@ -35,7 +44,7 @@
 
 		    $passwordWithSalt = $gakoa . $salt;
 
-		    if (password_verify($passwordWithSalt, $storedPassword)) {
+		if (password_verify($passwordWithSalt, $storedPassword)) {
 			$_SESSION['NAN'] = $NAN;
 			header("Location: menu.php");
 			exit();
@@ -87,8 +96,9 @@
 	    </html>';
 	    exit;
 	}
+	
 	function registrarIntentoIncorrecto($usuario) {
-    		$archivoLog = 'WebSistema.log';
+    		$archivoLog = '/var/log/denda/WebSistema.log';
 		$archivo = fopen($archivoLog, 'a');
 		$fechaHora = date('Y-m-d H:i:s');
 		$ip = ($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : 0;

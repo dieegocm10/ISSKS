@@ -1,5 +1,14 @@
 <?php
 	session_start();
+	
+	if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $sessionLifetime)) {
+	    // La sesión ha expirado, destruirla y redirigir al usuario al inicio de sesión
+	    session_unset();
+	    session_destroy();
+	    header("Location: index.php");
+	}
+	$_SESSION['last_activity'] = time(); 	// Actualizar el tiempo de actividad de la sesión
+
 	if (isset($_SESSION['NAN'])) {
 	  	$hostname = "db";
 	  	$username = "ISSKS";

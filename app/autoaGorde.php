@@ -1,5 +1,12 @@
 <?php
 	session_start();
+	if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $sessionLifetime)) {
+	    // La sesión ha expirado, destruirla y redirigir al usuario al inicio de sesión
+	    session_unset();
+	    session_destroy();
+	    header("Location: index.php");
+	}
+	$_SESSION['last_activity'] = time(); 	// Actualizar el tiempo de actividad de la sesión
 	if (isset($_SESSION['NAN'])) {
 	  	$marka = $_POST['marka'];  //Bidali dioten "marka" aldagaia, aldagai batean gorde
 	  	$prezioa = $_POST['prezioa'];  //Bidali dioten "prezioa" aldagaia, aldagai batean gorde

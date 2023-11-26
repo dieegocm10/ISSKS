@@ -1,4 +1,12 @@
 <?php
+	// Configurar el tiempo de vida de la sesión en segundos (por ejemplo, 30 minutos)
+	$sessionLifetime = 60; // 30 minutos
+
+	// Configurar el tiempo de vida de la cookie de sesión (opcional, pero recomendado)
+	session_set_cookie_params($sessionLifetime);
+
+	// Configurar el tiempo máximo de vida de la sesión en el servidor
+	ini_set('session.gc_maxlifetime', $sessionLifetime);
 	session_start();
 
 	// Generar token CSRF y guardarlo en la sesión
