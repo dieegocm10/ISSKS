@@ -1,6 +1,6 @@
 <?php
 	// Configurar el tiempo de vida de la sesión en segundos (por ejemplo, 30 minutos)
-	$sessionLifetime = 60; // 30 minutos
+	$sessionLifetime = 600; // 30 minutos
 
 	// Configurar el tiempo de vida de la cookie de sesión (opcional, pero recomendado)
 	session_set_cookie_params($sessionLifetime);
