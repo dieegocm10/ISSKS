@@ -25,65 +25,107 @@
 	$KarburanteMota = $row["KarburanteMota"];	//Aurkitu duen "KarburanteMota", aldagai batean gorde
 	$Modeloa = $row["Modeloa"];	//Aurkitu duen "Modeloa", aldagai batean gorde
   
-	echo '<html>
-		<head>
-			<script>
-				var lehenMatrikula = "';echo $Matrikula; echo '";
-
-				function confirmEzabatu() {
-				    var confirmacion = confirm("Autoa ezabatu nahi duzu?");
-
-				    if (confirmacion) {
-					window.location.href = "autoaEzabatu.php?lehenMatrikula=" + lehenMatrikula;
-				    }
-				}
-
-			</script>
-			<title>Denda</title>	
-			<link rel="stylesheet" href="css/autoarenDatuakEditatu.css">	
-		</head>
-		
-		<body>
-			<td><a href="index.html"><input type="button" name="HOME" value="HOME" class="button"></a></td>		
-			<td><a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a></td>	
-			<td><a href="datuakErakutsi.php"><input type="button" name="FLOTA" value="FLOTA" class="button"></a></td>	
-			<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-			<div class="container">
-				<div class="comment">Autoaren datuak aldatu ahal dituzu, matrikula izan ezik, edo autoa ezabatu:</div>
-      				<img src="irudiak/5.jpeg" width="300" height="250">
-				<div class="data-container">
-
-					<form  method="post" onsubmit="return autoaAldatu()">
-						<table>
-							<tr>
-								<td>MARKA:</td>		<!- MARKA laukia ipintzea !>
-								<td><input type="text" name="marka" value="';echo $Marka;echo'"></td>
-							</tr>
-							<tr>
-								<td>PREZIOA:</td>	<!- PREZIOA laukia ipintzea !>
-								<td><input type="number" name="prezioa" value="';echo $Prezioa;  echo'"></td>
-							</tr>
-							<tr>
-								<td>MATRIKULA:</td>	<!- MATRIKULA laukia ipintzea !>
-								<td><input type="text" name="matrikula" value="'; echo $Matrikula; echo'" readonly></td>
-							</tr>
-							<tr>
-								<td>KARBURANTE MOTA:</td>	<!- KARBURANTEA laukia ipintzea !>
-								<td><input type="text" name="karburanteMota" value="';echo $KarburanteMota;  echo'"></td>
-							</tr>
-							<tr>
-								<td>MODELOA:</td>	<!- MODELOA laukia ipintzea !>
-								<td><input type="text" name="modeloa" value="'; echo $Modeloa;  echo'"></td>
-							</tr>
-							<tr>
-								<td><p align="right"><input type="submit" formaction="autoaAldatu.php?lehenMatrikula=';echo $Matrikula;echo'" id="gorde"name="gorde" value="Gorde" class="button"></p></td>	
-								<td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" class="button" onclick="confirmEzabatu()" /></p></td>	
-						</table>
-					</form>
-				</div>
-			</div></div>
-			<script src="js/autoarenDatuakEditatu.js"></script>	
-		</body>
-	</html>';
 ?>
+
+<!DOCTYPE html>
+<html>
+	<head>
+	    	<script>
+			var lehenMatrikula = "<?php echo $Matrikula; ?>";
+
+			function confirmEzabatu() {
+		    		var confirmacion = confirm("Autoa ezabatu nahi duzu?");
+
+		    		if (confirmacion) {
+		        		window.location.href = "autoaEzabatu.php?lehenMatrikula=" + lehenMatrikula;
+		    		}
+			}
+	    	</script>
+		<title>Denda</title>
+		<link rel="stylesheet" href="css/autoarenDatuakEditatu.css">
+	</head>
+
+	<body>
+		<a href="index.php"><input type="button" name="HOME" value="HOME" class="button"></a>
+		<a href="menu.php"><input type="button" name="MENU" value="MENU" class="button"></a>
+		<a href="datuakErakutsi.php"><input type="button" name="FLOTA" value="FLOTA" class="button"></a>
+	    	<div align="center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+			<div class="container">
+		    	<div class="comment">Autoaren datuak aldatu ahal dituzu, matrikula izan ezik, edo autoa ezabatu:</div>
+		    	<img src="irudiak/5.jpeg" width="300" height="250">
+		    	<div class="data-container">
+		        	<form method="post" action="autoaAldatu.php?lehenMatrikula=<?php echo $Matrikula; ?>" onsubmit="return datuakKonprobatu()">
+		            		<table>
+		                		<tr>
+						    	<td>MARKA:</td>
+						    	<td><input type="text" name="marka" value="<?php echo $Marka; ?>"></td>
+						</tr>
+						<tr>
+							    <td>PREZIOA:</td>
+							    <td><input type="number" name="prezioa" value="<?php echo $Prezioa; ?>"></td>
+						</tr>
+						<tr>
+							    <td>MATRIKULA:</td>
+							    <td><input type="text" name="matrikula" value="<?php echo $Matrikula; ?>" readonly></td>
+						</tr>
+						<tr>
+							    <td>KARBURANTE MOTA:</td>
+							    <td><input type="text" name="karburanteMota" value="<?php echo $KarburanteMota; ?>"></td>
+						</tr>
+						<tr>
+							    <td>MODELOA:</td>
+							    <td><input type="text" name="modeloa" value="<?php echo $Modeloa; ?>"></td>
+						</tr>
+						<tr>
+							    <td><p align="right"><input type="submit" id="gorde" name="gorde" value="Gorde" class="button"></p></td>
+							    <td><p align="left"><input type="button" id="ezabatu" name="ezabatu" value="Autoa ezabatu" class="button" onclick="confirmEzabatu()" /></p></td>
+						</tr>
+		            		</table>
+		        	</form>
+		    	</div>
+		</div>
+	    </div>
+
+	    <script>
+		function datuakKonprobatu() {
+		    var marka = document.getElementsByName("marka")[0].value;
+		    var prezioa = document.getElementsByName("prezioa")[0].value;
+		    var matrikula = document.getElementsByName("matrikula")[0].value;
+		    var karburanteMota = document.getElementsByName("karburanteMota")[0].value;
+		    var modeloa = document.getElementsByName("modeloa")[0].value;
+
+		    if (marka == "") {
+		        alert("MARKA ez da jarri");
+		        return false;
+		    }
+
+		    if (prezioa == "") {
+		        alert("PREZIOA ez da jarri");
+		        return false;
+		    }
+
+		    if (matrikula == "") {
+		        alert("MATRIKULA ez da jarri");
+		        return false;
+		    } else {
+		        var patroia = /^\d{4} [A-Z]{3}$/;
+		        if (!patroia.test(matrikula)) {
+		            alert("MATRIKULA 1234 ABC formatua izan behar du");
+		            return false;
+		        }
+		    }
+
+		    if (karburanteMota == "") {
+		        alert("KARBURANTE MOTA ez da jarri");
+		        return false;
+		    }
+
+		    if (modeloa == "") {
+		        alert("MODELOA ez da jarri");
+		        return false;
+		    }
+		}
+	    </script>
+	</body>
+</html>
 
