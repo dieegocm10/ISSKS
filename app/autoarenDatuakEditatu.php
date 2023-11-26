@@ -21,18 +21,31 @@
 
 		$a = $_GET['parametro1'];
 
-		$query1 = mysqli_query($conn, "SELECT * FROM AUTOA WHERE Matrikula = '$a'")
-		    or die(mysqli_error($conn));
+		$sql = "SELECT * FROM AUTOA WHERE Matrikula = ?"; 
+		$stmt = $conn->prepare($sql); //se prepara la consulta parametrizada
 
-		$row = mysqli_fetch_array($query1);
-
+		if ($stmt) {
+			$stmt->bind_param("s", $a); // se introducen los parametros en la consulta
+		    	if ($stmt->execute()) {
+				$result = $stmt->get_result(); 
+				$row = $result->fetch_assoc();
+				if ($row) {
+					$Marka = $row["Marka"];
+				    	$Prezioa = $row["Prezioa"];
+				    	$Matrikula = $row["Matrikula"];
+				    	$KarburanteMota = $row["KarburanteMota"];
+				    	$Modeloa = $row["Modeloa"];
+				} else {
+				    	echo "No results found.";
+				}
+				$stmt->close();
+		    	}else {
+				die("Error en la ejecución de la consulta." . $conn->error);
+		    	}
+		}else {
+		    	die("Error en la preparación de la consulta.");
+		}
 		mysqli_close($conn);
-
-		$Marka = $row["Marka"];
-		$Prezioa = $row["Prezioa"];
-		$Matrikula = $row["Matrikula"];
-		$KarburanteMota = $row["KarburanteMota"];
-		$Modeloa = $row["Modeloa"];
 ?>
 
 <!DOCTYPE html>
